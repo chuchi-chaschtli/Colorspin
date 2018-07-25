@@ -1,0 +1,46 @@
+{
+    "wheel": {
+        "slices": "green:1,red:1,yellow:1,blue:1",
+        "centerX": 375,
+        "centerY": -1200,
+        "radius": 100
+    },
+    "particles": [
+        {
+            "x": 183,
+            "y": 0,
+            "radius": 20,
+            "color": "yellow",
+            "speed": 1.5,
+            "repeatEvery": 7,
+            "startingTick": 0
+        },
+        {
+            "x": 183,
+            "y": 0,
+            "radius": 20,
+            "color": "green",
+            "speed": 1.5,
+            "repeatEvery": 31,
+            "startingTick": 0
+        },
+        {
+            "x": 183,
+            "y": 0,
+            "radius": 20,
+            "color": "red",
+            "speed": 1.5,
+            "repeatEvery": 13,
+            "startingTick": 9
+        },
+        {
+            "x": 183,
+            "y": 0,
+            "radius": 20,
+            "color": "blue",
+            "speed": 1.5,
+            "repeatEvery": 11,
+            "startingTick": 5
+        }
+    ]
+}
