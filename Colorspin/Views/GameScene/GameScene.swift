@@ -20,7 +20,6 @@ class GameScene: SKScene {
     }
     private (set) var scoreLabel: SKLabelNode?
 
-    private var tickLengthMillis: TimeInterval = TimeInterval(1000)
     private (set) var lastTick: Date?
     private (set) var tick: Int = 0
 
@@ -76,7 +75,7 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        guard let lastTick = lastTick else {
+        guard let level = level, let lastTick = lastTick else {
             return
         }
         
@@ -85,13 +84,14 @@ class GameScene: SKScene {
             particle.node.position.y -= particle.speed
         }
         
-        #if DEBUG
-        let timePassed = currentTime * 1000
-        #else
-        let timePassed = lastTick.timeIntervalSinceNow * -1000.0
-        #endif
+        var timePassed = 1000.0
+        if Build.isRunningUnitTests {
+            timePassed *= currentTime
+        } else {
+            timePassed *= -lastTick.timeIntervalSinceNow
+        }
 
-        if timePassed > tickLengthMillis {
+        if timePassed > level.millisecondsPerTick {
             self.lastTick = Date()
 
             spawnParticles()
@@ -114,12 +114,13 @@ class GameScene: SKScene {
     }
     
     private func despawnParticles() {
-        guard let wheel = level?.wheel else {
+        guard let level = level else {
             return
         }
 
+        let wheel = level.wheel
         let separatedParticles = spawnedParticles.separate { (particle) -> Bool in
-            return wheel.center.y + wheel.radius * 0.85 <= particle.node.position.y
+            return wheel.center.y + wheel.radius * CGFloat(1.0 - level.safetyBuffer) <= particle.node.position.y
         }
 
         separatedParticles.notMatching.forEach { (particle) in
