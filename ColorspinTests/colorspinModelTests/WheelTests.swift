@@ -31,7 +31,7 @@ class WheelTests: XCTestCase {
             XCTAssertEqual(node.zPosition, 1)
         }
     }
-    
+
     func testWheelFromJson() {
         let json: JSON = [
             "slices": "green:1,red:1,yellow:1,blue:1",
@@ -46,7 +46,7 @@ class WheelTests: XCTestCase {
         XCTAssertEqual(wheel?.radius, 100)
         XCTAssertEqual(wheel?.nodes[0].position, CGPoint(x: 375, y: -1200))
     }
-    
+
     func testBadJson() {
         let json: JSON = [
             "slices": false,
@@ -58,7 +58,7 @@ class WheelTests: XCTestCase {
         
         XCTAssertNil(wheel)
     }
-    
+
     func testWheelRotateMaintainsState() {
         let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
         
@@ -68,5 +68,18 @@ class WheelTests: XCTestCase {
             XCTAssertEqual(node.glowWidth, 0.5)
             XCTAssertEqual(node.zPosition, 1)
         }
+    }
+    
+    func testWheelTopSlice() {
+        let json: JSON = [
+            "slices": "green:1,red:1,yellow:1,blue:1",
+            "centerX": CGFloat(375),
+            "centerY": CGFloat(-1200),
+            "radius": CGFloat(100)
+        ]
+        let wheel = try? Wheel(json: json)
+        
+        XCTAssertNotNil(wheel)
+        XCTAssertEqual(wheel?.topSlice?.fillColor, .green)
     }
 }

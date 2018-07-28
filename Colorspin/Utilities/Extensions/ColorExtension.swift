@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    
+
     static let stringsToColors: [String: UIColor] = [
         "red": .red,
         "blue": .blue,

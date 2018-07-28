@@ -28,7 +28,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "35EC099720FC05070096CCC8"
+               BlueprintIdentifier = "35EC09A520FC05320096CCC8"
                BuildableName = "colorspinModelTests.xctest"
                BlueprintName = "colorspinModelTests"
                ReferencedContainer = "container:Colorspin.xcodeproj">
@@ -56,6 +56,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "35182CD9210954F5009202A0"
+               BuildableName = "colorspinUtilitiesTests.xctest"
+               BlueprintName = "colorspinUtilitiesTests"
+               ReferencedContainer = "container:Colorspin.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "35182CEF210CA6F0009202A0"
+               BuildableName = "colorspinViewsTests.xctest"
+               BlueprintName = "colorspinViewsTests"
+               ReferencedContainer = "container:Colorspin.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

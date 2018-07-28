@@ -42,7 +42,15 @@ struct Wheel {
             return node
         })
     }
+}
 
+extension Wheel {
+    var topSlice: SKShapeNode? {
+        return nodes.first(where: { (node) -> Bool in
+            node.contains(CGPoint(x: node.position.x, y: node.position.y + radius / 2))
+        })
+    }
+    
     func rotate(at angle: CGFloat = CGFloat(Double.pi) / 2, for duration: Double = 0.5) {
         nodes.forEach({(slice) in
             slice.run(SKAction.rotate(byAngle: angle, duration: duration))
@@ -53,20 +61,20 @@ struct Wheel {
 extension Wheel: JSONParser {
     init(json: JSON?, timestamp: Date = Date()) throws {
         guard let json = json else {
-            throw ParseError.empty
+            throw JSONParseError.empty
         }
 
         guard let x = json["centerX"] as? CGFloat,
             let y = json["centerY"] as? CGFloat,
             let radius = json["radius"] as? CGFloat,
             let slicesObject = json["slices"] as? String else {
-                throw ParseError.fail
+                throw JSONParseError.fail
         }
 
         let slices = try slicesObject.split(separator: ",").compactMap({slice -> (CGFloat, UIColor)? in
             let sliceParts = slice.split(separator: ":")
             guard let color = UIColor.stringsToColors[String(sliceParts[0])], let value = Float(String(sliceParts[1])) else {
-                throw ParseError.malformed
+                throw JSONParseError.malformed
             }
             return (CGFloat(value), color)
         })

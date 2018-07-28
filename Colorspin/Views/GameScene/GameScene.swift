@@ -9,21 +9,20 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    private var level: Level?
+    private (set) var level: Level?
     
-    private var spawnedParticles: [Particle] = [Particle]()
+    private (set) var spawnedParticles: [Particle] = [Particle]()
 
     private var score: Int = 0 {
         didSet {
             scoreLabel?.text = "Score: \(score)"
         }
     }
-    private var scoreLabel: SKLabelNode?
-    private var gameSceneView: UIView?
+    private (set) var scoreLabel: SKLabelNode?
 
     private var tickLengthMillis: TimeInterval = TimeInterval(1000)
-    private var lastTick: NSDate?
-    private var tick: Int = 0
+    private (set) var lastTick: Date?
+    private (set) var tick: Int = 0
 
     override func sceneDidLoad() {
         level = try? Level(data: FileReader.read("level1"))
@@ -69,7 +68,7 @@ class GameScene: SKScene {
     }
     
     func start() {
-        lastTick = NSDate()
+        lastTick = Date()
     }
     
     func stop() {
@@ -86,9 +85,14 @@ class GameScene: SKScene {
             particle.node.position.y -= particle.speed
         }
         
+        #if DEBUG
+        let timePassed = currentTime * 1000
+        #else
         let timePassed = lastTick.timeIntervalSinceNow * -1000.0
+        #endif
+
         if timePassed > tickLengthMillis {
-            self.lastTick = NSDate()
+            self.lastTick = Date()
 
             spawnParticles()
             tick += 1
@@ -100,11 +104,11 @@ class GameScene: SKScene {
             tick % particle.repeatEvery == particle.starting && tick >= particle.starting
         }) ?? []
 
-        for index in 0 ..< particlesToSpawn.count {
-            if let copyNode = particlesToSpawn[index].node.copy() as? SKShapeNode {
+        particlesToSpawn.mutateEach { (particle) in
+            if let copyNode = particle.node.copy() as? SKShapeNode {
                 addChild(copyNode)
-                particlesToSpawn[index].node = copyNode
-                spawnedParticles.append(particlesToSpawn[index])
+                particle.node = copyNode
+                spawnedParticles.append(particle)
             }
         }
     }
@@ -119,22 +123,12 @@ class GameScene: SKScene {
         }
 
         separatedParticles.notMatching.forEach { (particle) in
-            if particle.node.fillColor == topWheelNode?.fillColor {
+            if particle.node.fillColor == wheel.topSlice?.fillColor {
                 score += 1
             }
             particle.node.removeFromParent()
         }
         spawnedParticles = separatedParticles.matching
-    }
-    
-    private var topWheelNode: SKShapeNode? {
-        guard let wheel = level?.wheel else {
-            return nil
-        }
-
-        return wheel.nodes.first(where: { (node) -> Bool in
-            node.contains(CGPoint(x: node.position.x, y: node.position.y + wheel.radius / 2))
-        })
     }
 }
 
@@ -144,3 +138,19 @@ extension GameScene: UIGestureRecognizerDelegate {
         return true
     }
 }
+
+#if DEBUG
+extension GameScene {
+    var started: Bool {
+        return lastTick != nil
+    }
+    
+    func set(level: Level) {
+        self.level = level
+    }
+    
+    func set(lastTick: Date = Date()) {
+        self.lastTick = lastTick
+    }
+}
+#endif

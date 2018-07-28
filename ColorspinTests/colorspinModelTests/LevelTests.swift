@@ -34,24 +34,9 @@ class LevelTests: XCTestCase {
     }
     
     func testLevelFromJson() {
-//        let json: JSON = [
-//            "x": CGFloat(183),
-//            "y": CGFloat(0),
-//            "radius": CGFloat(20),
-//            "color": "yellow",
-//            "speed": CGFloat(1.5),
-//            "repeatEvery": 7,
-//            "startingTick": 3
-//        ]
-//        let particle = try? Particle(json: json)
-//        
-//        XCTAssertNotNil(particle)
-//        XCTAssertEqual(particle?.repeatEvery, 7)
-//        XCTAssertEqual(particle?.starting, 3)
-//        XCTAssertEqual(particle?.speed, 1.5)
-//        XCTAssertEqual(particle?.node.position, CGPoint(x: 183, y: 0))
-//        XCTAssertEqual(particle?.node.zPosition, 0)
-//        XCTAssertEqual(particle?.node.fillColor, .yellow)
-//        XCTAssertEqual(particle?.node.strokeColor, .yellow)
+        let level = try? Level(data: levelData)
+        
+        XCTAssertNotNil(level)
+        XCTAssertEqual(level?.particles.count, 4)
     }
 }

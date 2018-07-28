@@ -10,12 +10,6 @@ import Foundation
 
 typealias JSON = [String: Any?]
 
-enum ParseError: Error {
-    case empty
-    case fail
-    case malformed
-}
-
 protocol JSONParser {
     init(json: JSON?, timestamp: Date) throws
 }
@@ -23,7 +17,7 @@ protocol JSONParser {
 extension JSONParser {
     static func array<Model: JSONParser>(from data: Data?) throws -> [Model] {
         guard let data = data, !data.isEmpty else {
-            throw ParseError.malformed
+            throw JSONParseError.malformed
         }
         
         do {
@@ -38,7 +32,7 @@ extension JSONParser {
     
     static func array<Model: JSONParser>(from json: Any?) throws -> [Model] {
         guard json != nil else {
-            throw ParseError.fail
+            throw JSONParseError.fail
         }
         
         if let array = json as? [JSON] {
@@ -48,7 +42,7 @@ extension JSONParser {
         }
         
         guard let json = json as? JSON else {
-            throw ParseError.fail
+            throw JSONParseError.fail
         }
 
         var data = [Model]()
@@ -66,7 +60,7 @@ extension JSONParser {
     
     init(data: Data, timestamp: Date = Date()) throws {
         guard let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? JSON else {
-            throw ParseError.fail
+            throw JSONParseError.fail
         }
         
         try self.init(json: json, timestamp: timestamp)

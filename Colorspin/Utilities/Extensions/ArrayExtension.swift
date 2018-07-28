@@ -1,5 +1,5 @@
 //
-//  CollectionExtension.swift
+//  ArrayExtension.swift
 //  Colorspin
 //
 //  Created by Anand Kumar on 7/21/18.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension Collection {
-    func separate(using predicate: (Iterator.Element) -> Bool) -> (matching: [Iterator.Element], notMatching: [Iterator.Element]) {
-        var groups: ([Iterator.Element],[Iterator.Element]) = ([],[])
+extension Array {
+    func separate(using predicate: (Element) -> Bool) -> (matching: [Element], notMatching: [Element]) {
+        var groups: ([Element], [Element]) = ([], [])
         self.forEach { (element) in
             if predicate(element) {
                 groups.0.append(element)
@@ -19,5 +19,11 @@ extension Collection {
             }
         }
         return groups
+    }
+
+    mutating func mutateEach(body: (inout Element) throws -> ()) rethrows {
+        for index in self.indices {
+            try body(&self[index])
+        }
     }
 }

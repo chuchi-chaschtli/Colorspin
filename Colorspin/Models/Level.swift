@@ -16,12 +16,12 @@ struct Level {
 extension Level: JSONParser {
     init(json: JSON?, timestamp: Date = Date()) throws {
         guard let json = json else {
-            throw ParseError.empty
+            throw JSONParseError.empty
         }
 
         guard let wheel: Wheel = try? Wheel(json: json["wheel"] as? JSON),
             let particles: [Particle] = try? Particle.array(from: json["particles"] as? [JSON]) else {
-                throw ParseError.fail
+                throw JSONParseError.fail
         }
         self.init(wheel: wheel, particles: particles)
     }

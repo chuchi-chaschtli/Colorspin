@@ -36,7 +36,7 @@ struct Particle {
 extension Particle: JSONParser {
     init(json: JSON?, timestamp: Date = Date()) throws {
         guard let json = json else {
-            throw ParseError.empty
+            throw JSONParseError.empty
         }
         
         guard let x = json["x"] as? CGFloat,
@@ -45,7 +45,7 @@ extension Particle: JSONParser {
             let speed = json["speed"] as? CGFloat,
             let colorString = json["color"] as? String,
             let color = UIColor.stringsToColors[colorString] else {
-                throw ParseError.fail
+                throw JSONParseError.fail
         }
         
         let repeatEvery = json["repeatEvery"] as? Int ?? 1
