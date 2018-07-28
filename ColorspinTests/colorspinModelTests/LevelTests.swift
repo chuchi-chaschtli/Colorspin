@@ -36,26 +36,6 @@ class LevelTests: XCTestCase {
         XCTAssertEqual(level.millisecondsPerTick, 250.0)
     }
     
-    func testLevelTPSWithinBounds() {
-        let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
-        
-        var level = Level(wheel: wheel, particles: [], safetyBuffer: 0.3, tps: 1000)
-        XCTAssertEqual(level.tps, 60)
-        
-        level = Level(wheel: wheel, particles: [], safetyBuffer: 0.3, tps: 0)
-        XCTAssertEqual(level.tps, 1)
-    }
-    
-    func testLevelSafetyBufferWithinBounds() {
-        let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
-
-        var level = Level(wheel: wheel, particles: [], safetyBuffer: 1.5, tps: 1)
-        XCTAssertEqual(level.safetyBuffer, 1)
-        
-        level = Level(wheel: wheel, particles: [], safetyBuffer: -0.1, tps: 1)
-        XCTAssertEqual(level.safetyBuffer, 0)
-    }
-    
     func testLevelFromJson() {
         let level = try? Level(data: levelData)
         

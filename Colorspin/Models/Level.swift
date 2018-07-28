@@ -17,8 +17,8 @@ struct Level {
     init(wheel: Wheel, particles: [Particle], safetyBuffer: Double = 0.2, tps: Int = 1) {
         self.wheel = wheel
         self.particles = particles
-        self.safetyBuffer = min(max(0, safetyBuffer), 1)
-        self.tps = min(max(1, tps), 60)
+        self.safetyBuffer = safetyBuffer.clamp(0, 1)
+        self.tps = Int(Double(tps).clamp(1, 60))
     }
 }
 
