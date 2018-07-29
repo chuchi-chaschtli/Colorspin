@@ -1,0 +1,6 @@
+framework module Pods_colorspinModelTests {
+  umbrella header "Pods-colorspinModelTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

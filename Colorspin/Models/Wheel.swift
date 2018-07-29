@@ -53,8 +53,9 @@ extension Wheel {
     }
 
     func rotate(for duration: Double = 0.5, reverse: Bool = false) {
+        let rotationFactor = totalScale / (reverse ? -2 : 2)
         nodes.forEach({(slice) in
-            slice.run(SKAction.rotate(byAngle: CGFloat(Double.pi) / totalScale * (reverse ? -2 : 2), duration: duration), withKey: "rotation")
+            slice.run(SKAction.rotate(byAngle: CGFloat.pi / rotationFactor, duration: duration), withKey: "rotation")
         })
     }
 }
@@ -85,7 +86,7 @@ extension Wheel: JSONParser {
 }
 
 extension Wheel: Equatable {
-    static func ==(lhs: Wheel, rhs: Wheel) -> Bool {
+    static func == (lhs: Wheel, rhs: Wheel) -> Bool {
         return lhs.nodes == rhs.nodes
     }
 }

@@ -13,7 +13,7 @@ struct FileReader {
         guard let path = Bundle.main.path(forResource: name, ofType: encoding) else {
             throw JSONParseError.malformed
         }
-        
+
         do {
             return try Data(contentsOf: URL(fileURLWithPath: path))
         } catch {

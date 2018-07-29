@@ -21,7 +21,7 @@ extension Array {
         return groups
     }
 
-    mutating func mutateEach(body: (inout Element) throws -> ()) rethrows {
+    mutating func mutateEach(body: (inout Element) throws -> Void) rethrows {
         for index in self.indices {
             try body(&self[index])
         }

@@ -1,0 +1,889 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AAC6BBB2B009D2AA66D08BC078C7037 /* Pods-colorspinViewsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA450EE20531F74BCECAC72F0864CE64 /* Pods-colorspinViewsTests-dummy.m */; };
+		0DB8A0EC749C15352B192D247EEF36D7 /* Pods-colorspinModelTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BA35CDEBDD94DECB618D6CEE8BDDC6 /* Pods-colorspinModelTests-dummy.m */; };
+		162CCD8AB5A72043A4C293EBF652B3F7 /* Pods-Colorspin-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB439EF28EFE37FF36931D238A276DB6 /* Pods-Colorspin-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		171861C7762DFFFAB76CE807B098DD3D /* Pods-colorspinViewsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAB73FD23AA2A6544B4BFA23CAB9DBE /* Pods-colorspinViewsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		58205B86CF5486828E12018FB5C6E0F6 /* Pods-colorspinUtilitiesTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D0485EA8598A1C44F50315BDECDCC572 /* Pods-colorspinUtilitiesTests-dummy.m */; };
+		5828D1F1B0D21E5C7F080B1CDDFE333D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		83185383AF2D3A5CDC1910DF18DB8678 /* Pods-Colorspin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 446CC420C226C0D804C253181988D7CB /* Pods-Colorspin-dummy.m */; };
+		8EBA3D5FA1EAED1873871BB3F42CB61C /* Pods-colorspinModelTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA2E3674BE5ABB018DE36BF569A9B783 /* Pods-colorspinModelTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B82F585AD0C6F0C6A90E33F93573147F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		B9997288C256F137D80F8C9EC2DF5B8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		F5B2D873C06B5DC8FBD93B990AD79F70 /* Pods-colorspinUtilitiesTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F33CE52CF96D1AB94FD0DDB4FFB9760 /* Pods-colorspinUtilitiesTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA5F26F9F14E886D29F859BF771D2ABA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		074A61A3AE816E32B1CC764421237EA4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08CCF7CBA150C9101C10856D1125843C /* Pods-Colorspin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Colorspin.release.xcconfig"; sourceTree = "<group>"; };
+		0BB50A97A8D6FA7A2E7AA81A5DA43C8B /* Pods-colorspinUtilitiesTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-colorspinUtilitiesTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1B5597BCB03961569F8B6C49041C25B1 /* Pods-colorspinModelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-colorspinModelTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2701F9ABECAD8900E39909E8B3E6E2E2 /* Pods-colorspinViewsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-colorspinViewsTests.modulemap"; sourceTree = "<group>"; };
+		3C45F4B21AEC2ED5D25A468C636E016D /* Pods-Colorspin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Colorspin.debug.xcconfig"; sourceTree = "<group>"; };
+		3E0BF433C9232236276D94380050C023 /* Pods-Colorspin-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Colorspin-acknowledgements.markdown"; sourceTree = "<group>"; };
+		420B42D0DE223EA173C95A6FDBDCB22D /* Pods-colorspinUtilitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-colorspinUtilitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		431B26419FCCA19FB043410891C40BAC /* Pods_colorspinModelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_colorspinModelTests.framework; path = "Pods-colorspinModelTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		446CC420C226C0D804C253181988D7CB /* Pods-Colorspin-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Colorspin-dummy.m"; sourceTree = "<group>"; };
+		47ABF3DB6EA56E4DC214E49455D7A334 /* Pods-colorspinModelTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-colorspinModelTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4D7E5E9F7F19D6155D05661DA3428677 /* Pods-colorspinViewsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-colorspinViewsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		583E4EDAD178A5B042D98E15F33D5899 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5F33CE52CF96D1AB94FD0DDB4FFB9760 /* Pods-colorspinUtilitiesTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-colorspinUtilitiesTests-umbrella.h"; sourceTree = "<group>"; };
+		63DBF1CFA8A67C9FC3DFA75C1870DBD4 /* Pods-colorspinUtilitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-colorspinUtilitiesTests.release.xcconfig"; sourceTree = "<group>"; };
+		69B0CD368BEB2D82C347D922EBAA7547 /* Pods-colorspinViewsTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-colorspinViewsTests-resources.sh"; sourceTree = "<group>"; };
+		6ABC716B62D378A36AA9710804EEBCC4 /* Pods_colorspinUtilitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_colorspinUtilitiesTests.framework; path = "Pods-colorspinUtilitiesTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B1BF96DD48278334076077E3831AE8A /* Pods-Colorspin-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Colorspin-acknowledgements.plist"; sourceTree = "<group>"; };
+		712C31E79A0C4E3EAE4FE2155E5D18F2 /* Pods-colorspinModelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-colorspinModelTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A1869D01E8B7FC2F4C52ED9C47BEA1A /* Pods-colorspinViewsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-colorspinViewsTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		91B22499C460E85B2CB924AC1F17D24A /* Pods-colorspinModelTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-colorspinModelTests-frameworks.sh"; sourceTree = "<group>"; };
+		92F9260CA6E440F93165BAF1BA2BB398 /* Pods-colorspinViewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-colorspinViewsTests.release.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95228154A3EEFA39D3E08536D1EC69DF /* Pods_colorspinViewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_colorspinViewsTests.framework; path = "Pods-colorspinViewsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3A9C9CC66DBFE23FAEE986D9794A27 /* Pods-Colorspin.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Colorspin.modulemap"; sourceTree = "<group>"; };
+		9DBF74F917D29593F84AD30BF56FDDD9 /* Pods-colorspinUtilitiesTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-colorspinUtilitiesTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		AA2E3674BE5ABB018DE36BF569A9B783 /* Pods-colorspinModelTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-colorspinModelTests-umbrella.h"; sourceTree = "<group>"; };
+		ADB50706BB025ABD9B91E354E08EBA69 /* Pods-colorspinModelTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-colorspinModelTests.modulemap"; sourceTree = "<group>"; };
+		AEAB73FD23AA2A6544B4BFA23CAB9DBE /* Pods-colorspinViewsTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-colorspinViewsTests-umbrella.h"; sourceTree = "<group>"; };
+		B648601B01CFCEB91EB32568D1982EEB /* Pods-colorspinModelTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-colorspinModelTests-resources.sh"; sourceTree = "<group>"; };
+		BA450EE20531F74BCECAC72F0864CE64 /* Pods-colorspinViewsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-colorspinViewsTests-dummy.m"; sourceTree = "<group>"; };
+		BC02DD8903B50E2FCC65AB62A42F6817 /* Pods-colorspinViewsTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-colorspinViewsTests-frameworks.sh"; sourceTree = "<group>"; };
+		BFCAE61377F1CE90CCA9BD8A2A6575E2 /* Pods-colorspinModelTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-colorspinModelTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C5BA35CDEBDD94DECB618D6CEE8BDDC6 /* Pods-colorspinModelTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-colorspinModelTests-dummy.m"; sourceTree = "<group>"; };
+		C97C3A5ED273563CAB4754A4DC6C2682 /* Pods-colorspinUtilitiesTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-colorspinUtilitiesTests-resources.sh"; sourceTree = "<group>"; };
+		CE04DDFC9553A55A3A793B38ECC7FEC9 /* Pods-colorspinUtilitiesTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-colorspinUtilitiesTests.modulemap"; sourceTree = "<group>"; };
+		CFFEF21B18DF843971E8D00E04E4D4E8 /* Pods_Colorspin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Colorspin.framework; path = "Pods-Colorspin.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0485EA8598A1C44F50315BDECDCC572 /* Pods-colorspinUtilitiesTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-colorspinUtilitiesTests-dummy.m"; sourceTree = "<group>"; };
+		DB173C4EBF0B0EC1E4EF49E456FCB57B /* Pods-Colorspin-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Colorspin-frameworks.sh"; sourceTree = "<group>"; };
+		E47DCB52FEB6C1CE814AC4DB09A1A183 /* Pods-colorspinUtilitiesTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-colorspinUtilitiesTests-frameworks.sh"; sourceTree = "<group>"; };
+		E99E1D92EE6B2CF56ABDC17FEA27EB26 /* Pods-colorspinViewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-colorspinViewsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB0F7D13F5282027A90788AF8DA868E0 /* Pods-Colorspin-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Colorspin-resources.sh"; sourceTree = "<group>"; };
+		EB439EF28EFE37FF36931D238A276DB6 /* Pods-Colorspin-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Colorspin-umbrella.h"; sourceTree = "<group>"; };
+		F5E3C857F695F307612322384DA28B3A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA62C678B5B73A4C248C4ECC1BD86D31 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		285238945AE15C0400F9C07EE097FFED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B82F585AD0C6F0C6A90E33F93573147F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E03843658BE45B8C6957958B0CF0EABD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA5F26F9F14E886D29F859BF771D2ABA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A7D06EB1717E68EEE2F88ECABC5B5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5828D1F1B0D21E5C7F080B1CDDFE333D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F61B47370F93F608D6217F059672BE78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9997288C256F137D80F8C9EC2DF5B8F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26171D7C8F0A85FF93843D3CA0AE7FE8 /* Pods-colorspinUtilitiesTests */ = {
+			isa = PBXGroup;
+			children = (
+				074A61A3AE816E32B1CC764421237EA4 /* Info.plist */,
+				CE04DDFC9553A55A3A793B38ECC7FEC9 /* Pods-colorspinUtilitiesTests.modulemap */,
+				0BB50A97A8D6FA7A2E7AA81A5DA43C8B /* Pods-colorspinUtilitiesTests-acknowledgements.markdown */,
+				9DBF74F917D29593F84AD30BF56FDDD9 /* Pods-colorspinUtilitiesTests-acknowledgements.plist */,
+				D0485EA8598A1C44F50315BDECDCC572 /* Pods-colorspinUtilitiesTests-dummy.m */,
+				E47DCB52FEB6C1CE814AC4DB09A1A183 /* Pods-colorspinUtilitiesTests-frameworks.sh */,
+				C97C3A5ED273563CAB4754A4DC6C2682 /* Pods-colorspinUtilitiesTests-resources.sh */,
+				5F33CE52CF96D1AB94FD0DDB4FFB9760 /* Pods-colorspinUtilitiesTests-umbrella.h */,
+				420B42D0DE223EA173C95A6FDBDCB22D /* Pods-colorspinUtilitiesTests.debug.xcconfig */,
+				63DBF1CFA8A67C9FC3DFA75C1870DBD4 /* Pods-colorspinUtilitiesTests.release.xcconfig */,
+			);
+			name = "Pods-colorspinUtilitiesTests";
+			path = "Target Support Files/Pods-colorspinUtilitiesTests";
+			sourceTree = "<group>";
+		};
+		2CD94762AC3594E8E8FB4E5D86B47EAD /* Pods-colorspinViewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3C857F695F307612322384DA28B3A /* Info.plist */,
+				2701F9ABECAD8900E39909E8B3E6E2E2 /* Pods-colorspinViewsTests.modulemap */,
+				4D7E5E9F7F19D6155D05661DA3428677 /* Pods-colorspinViewsTests-acknowledgements.markdown */,
+				8A1869D01E8B7FC2F4C52ED9C47BEA1A /* Pods-colorspinViewsTests-acknowledgements.plist */,
+				BA450EE20531F74BCECAC72F0864CE64 /* Pods-colorspinViewsTests-dummy.m */,
+				BC02DD8903B50E2FCC65AB62A42F6817 /* Pods-colorspinViewsTests-frameworks.sh */,
+				69B0CD368BEB2D82C347D922EBAA7547 /* Pods-colorspinViewsTests-resources.sh */,
+				AEAB73FD23AA2A6544B4BFA23CAB9DBE /* Pods-colorspinViewsTests-umbrella.h */,
+				E99E1D92EE6B2CF56ABDC17FEA27EB26 /* Pods-colorspinViewsTests.debug.xcconfig */,
+				92F9260CA6E440F93165BAF1BA2BB398 /* Pods-colorspinViewsTests.release.xcconfig */,
+			);
+			name = "Pods-colorspinViewsTests";
+			path = "Target Support Files/Pods-colorspinViewsTests";
+			sourceTree = "<group>";
+		};
+		2DCA2DDAFF33BE5EEFAF35A8ABB94543 /* Pods-Colorspin */ = {
+			isa = PBXGroup;
+			children = (
+				FA62C678B5B73A4C248C4ECC1BD86D31 /* Info.plist */,
+				9D3A9C9CC66DBFE23FAEE986D9794A27 /* Pods-Colorspin.modulemap */,
+				3E0BF433C9232236276D94380050C023 /* Pods-Colorspin-acknowledgements.markdown */,
+				6B1BF96DD48278334076077E3831AE8A /* Pods-Colorspin-acknowledgements.plist */,
+				446CC420C226C0D804C253181988D7CB /* Pods-Colorspin-dummy.m */,
+				DB173C4EBF0B0EC1E4EF49E456FCB57B /* Pods-Colorspin-frameworks.sh */,
+				EB0F7D13F5282027A90788AF8DA868E0 /* Pods-Colorspin-resources.sh */,
+				EB439EF28EFE37FF36931D238A276DB6 /* Pods-Colorspin-umbrella.h */,
+				3C45F4B21AEC2ED5D25A468C636E016D /* Pods-Colorspin.debug.xcconfig */,
+				08CCF7CBA150C9101C10856D1125843C /* Pods-Colorspin.release.xcconfig */,
+			);
+			name = "Pods-Colorspin";
+			path = "Target Support Files/Pods-Colorspin";
+			sourceTree = "<group>";
+		};
+		32A23E08346748F1793F899C5FF672C1 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				9758CC519AE2C57A9659FFC01AAD26F9 /* Pods */,
+				B4ACA12523F6742684D7ED195FF5C177 /* Products */,
+				B99C207A4EC02538FC3D026B0AC477B7 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9758CC519AE2C57A9659FFC01AAD26F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32A23E08346748F1793F899C5FF672C1 /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B4ACA12523F6742684D7ED195FF5C177 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFFEF21B18DF843971E8D00E04E4D4E8 /* Pods_Colorspin.framework */,
+				431B26419FCCA19FB043410891C40BAC /* Pods_colorspinModelTests.framework */,
+				6ABC716B62D378A36AA9710804EEBCC4 /* Pods_colorspinUtilitiesTests.framework */,
+				95228154A3EEFA39D3E08536D1EC69DF /* Pods_colorspinViewsTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B99C207A4EC02538FC3D026B0AC477B7 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2DCA2DDAFF33BE5EEFAF35A8ABB94543 /* Pods-Colorspin */,
+				D75CCD1C2356D7E9A28EACCD1F33E33B /* Pods-colorspinModelTests */,
+				26171D7C8F0A85FF93843D3CA0AE7FE8 /* Pods-colorspinUtilitiesTests */,
+				2CD94762AC3594E8E8FB4E5D86B47EAD /* Pods-colorspinViewsTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D75CCD1C2356D7E9A28EACCD1F33E33B /* Pods-colorspinModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				583E4EDAD178A5B042D98E15F33D5899 /* Info.plist */,
+				ADB50706BB025ABD9B91E354E08EBA69 /* Pods-colorspinModelTests.modulemap */,
+				47ABF3DB6EA56E4DC214E49455D7A334 /* Pods-colorspinModelTests-acknowledgements.markdown */,
+				BFCAE61377F1CE90CCA9BD8A2A6575E2 /* Pods-colorspinModelTests-acknowledgements.plist */,
+				C5BA35CDEBDD94DECB618D6CEE8BDDC6 /* Pods-colorspinModelTests-dummy.m */,
+				91B22499C460E85B2CB924AC1F17D24A /* Pods-colorspinModelTests-frameworks.sh */,
+				B648601B01CFCEB91EB32568D1982EEB /* Pods-colorspinModelTests-resources.sh */,
+				AA2E3674BE5ABB018DE36BF569A9B783 /* Pods-colorspinModelTests-umbrella.h */,
+				1B5597BCB03961569F8B6C49041C25B1 /* Pods-colorspinModelTests.debug.xcconfig */,
+				712C31E79A0C4E3EAE4FE2155E5D18F2 /* Pods-colorspinModelTests.release.xcconfig */,
+			);
+			name = "Pods-colorspinModelTests";
+			path = "Target Support Files/Pods-colorspinModelTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1DAFF8B9951FE28DEF59067299A5F7CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				171861C7762DFFFAB76CE807B098DD3D /* Pods-colorspinViewsTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25B788A8DF8B2D11F00C31A6BADAA45A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				162CCD8AB5A72043A4C293EBF652B3F7 /* Pods-Colorspin-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		289813C79B00879C3EA6BFF7A08A78C0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EBA3D5FA1EAED1873871BB3F42CB61C /* Pods-colorspinModelTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		725F2B8B3CF881613945240416B266B3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5B2D873C06B5DC8FBD93B990AD79F70 /* Pods-colorspinUtilitiesTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5A87E4F88757FB6CAA75159B04DEF8B2 /* Pods-Colorspin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52EAB3D4C3B3B92B5B7FEA37E175F38E /* Build configuration list for PBXNativeTarget "Pods-Colorspin" */;
+			buildPhases = (
+				1F1D68D80AFAA2EDDEEF106144F421AA /* Sources */,
+				E03843658BE45B8C6957958B0CF0EABD /* Frameworks */,
+				25B788A8DF8B2D11F00C31A6BADAA45A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Colorspin";
+			productName = "Pods-Colorspin";
+			productReference = CFFEF21B18DF843971E8D00E04E4D4E8 /* Pods_Colorspin.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9BB0B8A46A8DB6DC2FFF0C56BA9BD995 /* Pods-colorspinViewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA620D473DBF0B1368EE4AC662D2F870 /* Build configuration list for PBXNativeTarget "Pods-colorspinViewsTests" */;
+			buildPhases = (
+				BADF2388014AF966E86755CC853DC18A /* Sources */,
+				285238945AE15C0400F9C07EE097FFED /* Frameworks */,
+				1DAFF8B9951FE28DEF59067299A5F7CF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-colorspinViewsTests";
+			productName = "Pods-colorspinViewsTests";
+			productReference = 95228154A3EEFA39D3E08536D1EC69DF /* Pods_colorspinViewsTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B6086D39D84C4280BAE57E67D580E6A8 /* Pods-colorspinModelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1328848347B44E776EFD3F32CC992D52 /* Build configuration list for PBXNativeTarget "Pods-colorspinModelTests" */;
+			buildPhases = (
+				C4D9A8E055FB7C5A8DBD40CABD054F62 /* Sources */,
+				E0A7D06EB1717E68EEE2F88ECABC5B5B /* Frameworks */,
+				289813C79B00879C3EA6BFF7A08A78C0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-colorspinModelTests";
+			productName = "Pods-colorspinModelTests";
+			productReference = 431B26419FCCA19FB043410891C40BAC /* Pods_colorspinModelTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C3B551FC34BCCCB5E36F6B3A08D537E5 /* Pods-colorspinUtilitiesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 408EC9F5FF4B616144E5C81CF6BAA098 /* Build configuration list for PBXNativeTarget "Pods-colorspinUtilitiesTests" */;
+			buildPhases = (
+				BF9BAA4C2BBF0063FF8F2C021018AFFE /* Sources */,
+				F61B47370F93F608D6217F059672BE78 /* Frameworks */,
+				725F2B8B3CF881613945240416B266B3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-colorspinUtilitiesTests";
+			productName = "Pods-colorspinUtilitiesTests";
+			productReference = 6ABC716B62D378A36AA9710804EEBCC4 /* Pods_colorspinUtilitiesTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B4ACA12523F6742684D7ED195FF5C177 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A87E4F88757FB6CAA75159B04DEF8B2 /* Pods-Colorspin */,
+				B6086D39D84C4280BAE57E67D580E6A8 /* Pods-colorspinModelTests */,
+				C3B551FC34BCCCB5E36F6B3A08D537E5 /* Pods-colorspinUtilitiesTests */,
+				9BB0B8A46A8DB6DC2FFF0C56BA9BD995 /* Pods-colorspinViewsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F1D68D80AFAA2EDDEEF106144F421AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83185383AF2D3A5CDC1910DF18DB8678 /* Pods-Colorspin-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BADF2388014AF966E86755CC853DC18A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AAC6BBB2B009D2AA66D08BC078C7037 /* Pods-colorspinViewsTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF9BAA4C2BBF0063FF8F2C021018AFFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58205B86CF5486828E12018FB5C6E0F6 /* Pods-colorspinUtilitiesTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4D9A8E055FB7C5A8DBD40CABD054F62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DB8A0EC749C15352B192D247EEF36D7 /* Pods-colorspinModelTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		351B1EBA37561E5FEFAF9B9DB3C72368 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63DBF1CFA8A67C9FC3DFA75C1870DBD4 /* Pods-colorspinUtilitiesTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-colorspinUtilitiesTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-colorspinUtilitiesTests/Pods-colorspinUtilitiesTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		670456AE4333596C4A63BEBC2E9CCD4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92F9260CA6E440F93165BAF1BA2BB398 /* Pods-colorspinViewsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-colorspinViewsTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-colorspinViewsTests/Pods-colorspinViewsTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6BCFA692294574F67B06FDBB97B155B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E99E1D92EE6B2CF56ABDC17FEA27EB26 /* Pods-colorspinViewsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-colorspinViewsTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-colorspinViewsTests/Pods-colorspinViewsTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		85C7F7FBF0878A8CC55A8628E7664AE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C45F4B21AEC2ED5D25A468C636E016D /* Pods-Colorspin.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Colorspin/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Colorspin/Pods-Colorspin.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		950E4179EB51DABECA3BD6C0273D2C96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 420B42D0DE223EA173C95A6FDBDCB22D /* Pods-colorspinUtilitiesTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-colorspinUtilitiesTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-colorspinUtilitiesTests/Pods-colorspinUtilitiesTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A9AB1D83349215D97F5956C5BDD76270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08CCF7CBA150C9101C10856D1125843C /* Pods-Colorspin.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Colorspin/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Colorspin/Pods-Colorspin.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE0CBF916A330CFA1D1F04910D332879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 712C31E79A0C4E3EAE4FE2155E5D18F2 /* Pods-colorspinModelTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-colorspinModelTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-colorspinModelTests/Pods-colorspinModelTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C338E43CDAE95DEEFD1843D322D9793A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B5597BCB03961569F8B6C49041C25B1 /* Pods-colorspinModelTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-colorspinModelTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-colorspinModelTests/Pods-colorspinModelTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1328848347B44E776EFD3F32CC992D52 /* Build configuration list for PBXNativeTarget "Pods-colorspinModelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C338E43CDAE95DEEFD1843D322D9793A /* Debug */,
+				BE0CBF916A330CFA1D1F04910D332879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		408EC9F5FF4B616144E5C81CF6BAA098 /* Build configuration list for PBXNativeTarget "Pods-colorspinUtilitiesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				950E4179EB51DABECA3BD6C0273D2C96 /* Debug */,
+				351B1EBA37561E5FEFAF9B9DB3C72368 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52EAB3D4C3B3B92B5B7FEA37E175F38E /* Build configuration list for PBXNativeTarget "Pods-Colorspin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C7F7FBF0878A8CC55A8628E7664AE4 /* Debug */,
+				A9AB1D83349215D97F5956C5BDD76270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA620D473DBF0B1368EE4AC662D2F870 /* Build configuration list for PBXNativeTarget "Pods-colorspinViewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BCFA692294574F67B06FDBB97B155B8 /* Debug */,
+				670456AE4333596C4A63BEBC2E9CCD4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,52 @@
+empty_count: error
+force_try: error
+closing_brace: error
+colon: error
+comma: error
+conditional_binding_cascade: error
+control_statement: error
+leading_whitespace: error
+operator_whitespace: error
+return_arrow_whitespace: error
+trailing_newline: error
+trailing_semicolon: error
+trailing_whitespace: error
+void_return: error
+weak_delegate: error
+
+todo: warning
+
+variable_name:
+  severity: warning
+  min_length: 1
+  max_length: 100
+type_name:
+  severity: warning
+  min_length: 2
+  max_length: 100
+line_length:
+  warning: 150
+  error: 200
+function_body_length:
+  warning: 40
+  error: 70
+cyclomatic_complexity:
+  warning: 10
+  error: 15
+
+disabled_rules:
+  - function_parameter_count
+  - opening_brace
+  - statement_position
+  - file_length
+  - switch_case_alignment
+  - discouraged_direct_init
+  - multiple_closures_with_trailing_closure
+  - fallthrough
+
+included:
+  - Colorspin
+  - ColorspinTests
+
+excluded:
+  - Pods

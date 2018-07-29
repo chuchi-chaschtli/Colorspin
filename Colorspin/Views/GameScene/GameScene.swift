@@ -10,7 +10,6 @@ import SpriteKit
 
 class GameScene: SKScene {
     private (set) var level: Level?
-    
     private (set) var spawnedParticles: [Particle] = [Particle]()
 
     private var score: Int = 0 {
@@ -28,7 +27,7 @@ class GameScene: SKScene {
 
         anchorPoint = CGPoint(x: 0, y: 1)
         backgroundColor = .lightGray
-        
+
         scoreLabel = self.childNode(withName: "//scoreLabel") as? SKLabelNode
         scoreLabel?.text = "Score: \(score)"
     }
@@ -57,25 +56,25 @@ class GameScene: SKScene {
     @objc func longPressed(sender: UILongPressGestureRecognizer) {
         level?.wheel.rotate(for: 0.9, reverse: sender.location(in: view).x >= (view?.frame.width ?? 0) / 2)
     }
-    
+
     func start() {
         lastTick = Date()
     }
-    
+
     func stop() {
         lastTick = nil
     }
-    
+
     override func update(_ currentTime: TimeInterval) {
         guard let level = level, let lastTick = lastTick else {
             return
         }
-        
+
         despawnParticles()
         spawnedParticles.forEach { (particle) in
             particle.node.position.y -= particle.speed
         }
-        
+
         var timePassed = 1000.0
         if Build.isRunningUnitTests {
             timePassed *= currentTime
@@ -90,7 +89,7 @@ class GameScene: SKScene {
             tick += 1
         }
     }
-    
+
     private func spawnParticles() {
         var particlesToSpawn = level?.particles.filter({ (particle) -> Bool in
             tick % particle.repeatEvery == particle.starting && tick >= particle.starting
@@ -104,7 +103,7 @@ class GameScene: SKScene {
             }
         }
     }
-    
+
     private func despawnParticles() {
         guard let level = level else {
             return
@@ -137,11 +136,11 @@ extension GameScene {
     var started: Bool {
         return lastTick != nil
     }
-    
+
     func set(level: Level) {
         self.level = level
     }
-    
+
     func set(lastTick: Date = Date()) {
         self.lastTick = lastTick
     }

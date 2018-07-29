@@ -1,0 +1,6 @@
+framework module Pods_Colorspin {
+  umbrella header "Pods-Colorspin-umbrella.h"
+
+  export *
+  module * { export * }
+}
