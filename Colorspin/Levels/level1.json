@@ -42,5 +42,7 @@
             "repeatEvery": 11,
             "startingTick": 5
         }
-    ]
+    ],
+    "safetyBuffer": 0.2,
+    "tps": 1
 }

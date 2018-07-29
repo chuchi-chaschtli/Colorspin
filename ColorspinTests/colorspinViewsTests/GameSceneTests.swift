@@ -116,7 +116,7 @@ class GameSceneTests: XCTestCase {
             sut.update(2)
         }
 
-        XCTAssertEqual(sut.spawnedParticles.count, 256)
+        XCTAssertEqual(sut.spawnedParticles.count, 257)
         XCTAssertEqual(sut.scoreLabel?.text, "Score: 9")
     }
 }

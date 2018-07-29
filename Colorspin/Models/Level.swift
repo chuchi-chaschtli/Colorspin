@@ -11,6 +11,21 @@ import Foundation
 struct Level {
     var wheel: Wheel
     var particles: [Particle]
+    var safetyBuffer: Double
+    var tps: Int
+
+    init(wheel: Wheel, particles: [Particle], safetyBuffer: Double = 0.2, tps: Int = 1) {
+        self.wheel = wheel
+        self.particles = particles
+        self.safetyBuffer = safetyBuffer.clamp(0, 1)
+        self.tps = Int(Double(tps).clamp(1, 60))
+    }
+}
+
+extension Level {
+    var millisecondsPerTick: Double {
+        return 1000.0 / Double(tps)
+    }
 }
 
 extension Level: JSONParser {
@@ -20,10 +35,14 @@ extension Level: JSONParser {
         }
 
         guard let wheel: Wheel = try? Wheel(json: json["wheel"] as? JSON),
-            let particles: [Particle] = try? Particle.array(from: json["particles"] as? [JSON]) else {
+            let particles: [Particle] = try? Particle.array(from: json["particles"] as? [JSON]),
+            let safetyBuffer = json["safetyBuffer"] as? Double else {
                 throw JSONParseError.fail
         }
-        self.init(wheel: wheel, particles: particles)
+
+        let tps = json["tps"] as? Int ?? 1
+
+        self.init(wheel: wheel, particles: particles, safetyBuffer: safetyBuffer, tps: tps)
     }
 }
 
