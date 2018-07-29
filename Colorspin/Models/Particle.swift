@@ -44,7 +44,7 @@ extension Particle: JSONParser {
             let radius = json["radius"] as? CGFloat,
             let speed = json["speed"] as? CGFloat,
             let colorString = json["color"] as? String,
-            let color = UIColor.stringsToColors[colorString] else {
+            let color = UIColor(name: colorString) else {
                 throw JSONParseError.fail
         }
 
