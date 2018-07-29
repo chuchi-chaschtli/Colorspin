@@ -54,8 +54,14 @@ extension Wheel {
 
     func rotate(for duration: Double = 0.5, reverse: Bool = false) {
         let rotationFactor = totalScale / (reverse ? -2 : 2)
+        let action = SKAction.rotate(byAngle: CGFloat.pi / rotationFactor, duration: duration)
+
         nodes.forEach({(slice) in
-            slice.run(SKAction.rotate(byAngle: CGFloat.pi / rotationFactor, duration: duration), withKey: "rotation")
+            if Build.isRunningUnitTests {
+                slice.run(action, withKey: "rotation")
+            } else {
+                slice.run(action)
+            }
         })
     }
 }
