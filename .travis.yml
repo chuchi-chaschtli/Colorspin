@@ -1,0 +1,6 @@
+language: objective-c 
+osx_image: xcode9.4
+script:
+  - set -o pipefail
+  - xcodebuild -workspace Colorspin.xcworkspace -scheme Colorspin -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - swiftlint
