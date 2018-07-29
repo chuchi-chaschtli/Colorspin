@@ -200,7 +200,8 @@
 			children = (
 				35182D06210CD280009202A0 /* level.json */,
 			);
-			path = Fixtures;
+			name = Fixtures;
+			path = ../ColorspinTests/Fixtures;
 			sourceTree = "<group>";
 		};
 		35EC08A020FAA5D60096CCC8 = {
