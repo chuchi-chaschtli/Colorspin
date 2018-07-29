@@ -52,19 +52,11 @@ class GameScene: SKScene {
             return
         }
 
-        if firstTouch.location(in: view).x >= (view?.frame.width ?? 0) / 2 {
-            level?.wheel.rotate(at: -CGFloat(Double.pi) / 2)
-        } else {
-            level?.wheel.rotate()
-        }
+        level?.wheel.rotate(reverse: firstTouch.location(in: view).x >= (view?.frame.width ?? 0) / 2)
     }
 
     @objc func longPressed(sender: UILongPressGestureRecognizer) {
-        if sender.location(in: view).x >= (view?.frame.width ?? 0) / 2 {
-            level?.wheel.rotate(at: -CGFloat(Double.pi) / 2, for: 0.9)
-        } else {
-            level?.wheel.rotate(for: 0.9)
-        }
+        level?.wheel.rotate(for: 0.9, reverse: sender.location(in: view).x >= (view?.frame.width ?? 0) / 2)
     }
     
     func start() {

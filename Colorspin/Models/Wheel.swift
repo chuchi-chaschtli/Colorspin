@@ -13,13 +13,14 @@ struct Wheel {
 
     let radius: CGFloat
     let center: CGPoint
+    let totalScale: CGFloat
 
     init(slices: [(scale: CGFloat, color: UIColor)], center: CGPoint, radius: CGFloat) {
-        let totalScale = slices.reduce(0, {$0 + $1.scale})
         var angle = CGFloat(Double.pi) * 3 / 4
 
         self.radius = radius
         self.center = center
+        self.totalScale = slices.reduce(0, {$0 + $1.scale})
 
         self.nodes = slices.map({ (scale, color) -> SKShapeNode in
             let path = UIBezierPath()
@@ -50,10 +51,10 @@ extension Wheel {
             node.contains(CGPoint(x: node.position.x, y: node.position.y + radius / 2))
         })
     }
-    
-    func rotate(at angle: CGFloat = CGFloat(Double.pi) / 2, for duration: Double = 0.5) {
+
+    func rotate(for duration: Double = 0.5, reverse: Bool = false) {
         nodes.forEach({(slice) in
-            slice.run(SKAction.rotate(byAngle: angle, duration: duration))
+            slice.run(SKAction.rotate(byAngle: CGFloat(Double.pi) / totalScale * (reverse ? -2 : 2), duration: duration), withKey: "rotation")
         })
     }
 }

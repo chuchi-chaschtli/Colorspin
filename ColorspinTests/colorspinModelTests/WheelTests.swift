@@ -58,12 +58,27 @@ class WheelTests: XCTestCase {
         
         XCTAssertNil(wheel)
     }
+    
+    func testWheelRotateAngle() {
+        let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
+        
+        wheel.rotate(for: 0.3)
+        
+        wheel.nodes.forEach { (node) in
+            let action = node.action(forKey: "rotation")
+            
+            XCTAssertNotNil(action)
+            XCTAssertEqual(action?.speed, 1.0)
+            XCTAssertEqual(Float(action.unsafelyUnwrapped.duration), 0.3, accuracy: 0.001)
+        }
+    }
 
     func testWheelRotateMaintainsState() {
         let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
         
         wheel.rotate()
         wheel.nodes.forEach { (node) in
+            XCTAssertTrue(node.hasActions())
             XCTAssertEqual(node.position, CGPoint(x: 40, y: 100))
             XCTAssertEqual(node.glowWidth, 0.5)
             XCTAssertEqual(node.zPosition, 1)
