@@ -3,7 +3,6 @@ force_try: error
 closing_brace: error
 colon: error
 comma: error
-conditional_binding_cascade: error
 control_statement: error
 leading_whitespace: error
 operator_whitespace: error
@@ -13,10 +12,11 @@ trailing_semicolon: error
 trailing_whitespace: error
 void_return: error
 weak_delegate: error
+yoda_condition: error
 
 todo: warning
 
-variable_name:
+identifier_name:
   severity: warning
   min_length: 1
   max_length: 100
