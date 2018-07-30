@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Build {
+struct Build {
     static var isRunningUnitTests: Bool {
         #if DEBUG
             return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
