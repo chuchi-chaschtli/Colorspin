@@ -13,11 +13,11 @@ class ArrayExtensionTests: XCTestCase {
 
     func testSeparate() {
         let array: [Any] = [1, "hello", 2.5, "world", true, false]
-        
+
         let separated = array.separate { (element) -> Bool in
             element is String
         }
-    
+
         XCTAssertTrue(separated.matching is [String])
         XCTAssertEqual(separated.matching as? [String], ["hello", "world"])
         XCTAssertEqual(separated.notMatching[0] as? Int, 1)
@@ -25,14 +25,14 @@ class ArrayExtensionTests: XCTestCase {
         XCTAssertTrue(separated.notMatching[2] as? Bool ?? false)
         XCTAssertFalse(separated.notMatching[3] as? Bool ?? true)
     }
-    
+
     func testMutableForEach() {
         var array: [Int] = [1, 2, 5, 7, 100]
-        
+
         array.mutateEach { (value) in
             value *= 2
         }
-        
+
         XCTAssertNotNil(array)
         XCTAssertEqual(array.count, 5)
         XCTAssertEqual(array[0], 2)

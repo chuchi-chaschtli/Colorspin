@@ -18,7 +18,7 @@ class WheelTests: XCTestCase {
         XCTAssertFalse(wheel1 == wheel2)
         XCTAssertTrue(wheel1 == wheel1)
     }
-    
+
     func testWheelNodesSetup() {
         let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
 
@@ -40,7 +40,7 @@ class WheelTests: XCTestCase {
             "radius": CGFloat(100)
         ]
         let wheel = try? Wheel(json: json)
-        
+
         XCTAssertNotNil(wheel)
         XCTAssertEqual(wheel?.nodes.count, 4)
         XCTAssertEqual(wheel?.radius, 100)
@@ -55,18 +55,18 @@ class WheelTests: XCTestCase {
             "radius": CGFloat(100)
         ]
         let wheel = try? Wheel(json: json)
-        
+
         XCTAssertNil(wheel)
     }
-    
+
     func testWheelRotateAngle() {
         let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
-        
+
         wheel.rotate(for: 0.3)
-        
+
         wheel.nodes.forEach { (node) in
             let action = node.action(forKey: "rotation")
-            
+
             XCTAssertNotNil(action)
             XCTAssertEqual(action?.speed, 1.0)
             XCTAssertEqual(Float(action.unsafelyUnwrapped.duration), 0.3, accuracy: 0.001)
@@ -75,7 +75,7 @@ class WheelTests: XCTestCase {
 
     func testWheelRotateMaintainsState() {
         let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
-        
+
         wheel.rotate()
         wheel.nodes.forEach { (node) in
             XCTAssertTrue(node.hasActions())
@@ -84,7 +84,7 @@ class WheelTests: XCTestCase {
             XCTAssertEqual(node.zPosition, 1)
         }
     }
-    
+
     func testWheelTopSlice() {
         let json: JSON = [
             "slices": "green:1,red:1,yellow:1,blue:1",
@@ -93,7 +93,7 @@ class WheelTests: XCTestCase {
             "radius": CGFloat(100)
         ]
         let wheel = try? Wheel(json: json)
-        
+
         XCTAssertNotNil(wheel)
         XCTAssertEqual(wheel?.topSlice?.fillColor, .green)
     }

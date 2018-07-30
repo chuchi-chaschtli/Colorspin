@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072E2463690FD20FC8623C10 /* Pods_colorspinUtilitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DCFFDCA0F1DF92064AD7E3 /* Pods_colorspinUtilitiesTests.framework */; };
+		1AED5702D7F1E320CEBDAF7F /* Pods_colorspinModelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12C89969D09B367DE6C9F3B /* Pods_colorspinModelTests.framework */; };
+		34FC23DFD82D9459D751B107 /* Pods_Colorspin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5334C1241EE3C77510F16DC8 /* Pods_Colorspin.framework */; };
 		35182CA920FC065F009202A0 /* WheelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC094C20FBEFA90096CCC8 /* WheelTests.swift */; };
 		35182CAE20FC1630009202A0 /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35182CAD20FC1630009202A0 /* Particle.swift */; };
 		35182CB42103C390009202A0 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35182CB32103C390009202A0 /* ArrayExtension.swift */; };
@@ -37,6 +40,7 @@
 		35EC08BD20FAA5D80096CCC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35EC08BB20FAA5D80096CCC8 /* LaunchScreen.storyboard */; };
 		35EC08E820FBE0350096CCC8 /* Wheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC08E720FBE0350096CCC8 /* Wheel.swift */; };
 		35EC08F020FBE8180096CCC8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 35EC08EF20FBE8180096CCC8 /* GameScene.sks */; };
+		48D7992036CA482F142298A3 /* Pods_colorspinViewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1BAA930D02FB668021E0F7 /* Pods_colorspinViewsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06A0585F8244228054A4FE3F /* Pods-colorspinUtilitiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-colorspinUtilitiesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-colorspinUtilitiesTests/Pods-colorspinUtilitiesTests.release.xcconfig"; sourceTree = "<group>"; };
+		269B50F87486F64D97552C4C /* Pods-colorspinViewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-colorspinViewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-colorspinViewsTests/Pods-colorspinViewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35182CAD20FC1630009202A0 /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		35182CB32103C390009202A0 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		35182CBB2103D808009202A0 /* GameSceneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +104,16 @@
 		35EC093820FBEE5C0096CCC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35EC094C20FBEFA90096CCC8 /* WheelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelTests.swift; sourceTree = "<group>"; };
 		35EC09A620FC05320096CCC8 /* colorspinModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = colorspinModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5334C1241EE3C77510F16DC8 /* Pods_Colorspin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Colorspin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80F53A3DBA0F39319CAC3F62 /* Pods-colorspinModelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-colorspinModelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-colorspinModelTests/Pods-colorspinModelTests.release.xcconfig"; sourceTree = "<group>"; };
+		A0DCFFDCA0F1DF92064AD7E3 /* Pods_colorspinUtilitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_colorspinUtilitiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1BAA930D02FB668021E0F7 /* Pods_colorspinViewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_colorspinViewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF7414EB6070D97F0969F5B3 /* Pods-colorspinViewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-colorspinViewsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-colorspinViewsTests/Pods-colorspinViewsTests.release.xcconfig"; sourceTree = "<group>"; };
+		B12C89969D09B367DE6C9F3B /* Pods_colorspinModelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_colorspinModelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B69F5684922AF30BCF60BC5D /* Pods-Colorspin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colorspin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Colorspin/Pods-Colorspin.debug.xcconfig"; sourceTree = "<group>"; };
+		BA9D76A4F702796C19B37B93 /* Pods-colorspinModelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-colorspinModelTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-colorspinModelTests/Pods-colorspinModelTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BAF64ED8EF9AF1DA3668E724 /* Pods-Colorspin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colorspin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colorspin/Pods-Colorspin.release.xcconfig"; sourceTree = "<group>"; };
+		BBC27BA93F5000D8F9B42BB6 /* Pods-colorspinUtilitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-colorspinUtilitiesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-colorspinUtilitiesTests/Pods-colorspinUtilitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072E2463690FD20FC8623C10 /* Pods_colorspinUtilitiesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D7992036CA482F142298A3 /* Pods_colorspinViewsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34FC23DFD82D9459D751B107 /* Pods_Colorspin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,12 +145,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AED5702D7F1E320CEBDAF7F /* Pods_colorspinModelTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FB2C7FBF8C9E5D0BA50EE36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5334C1241EE3C77510F16DC8 /* Pods_Colorspin.framework */,
+				B12C89969D09B367DE6C9F3B /* Pods_colorspinModelTests.framework */,
+				A0DCFFDCA0F1DF92064AD7E3 /* Pods_colorspinUtilitiesTests.framework */,
+				AB1BAA930D02FB668021E0F7 /* Pods_colorspinViewsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		35182CB12103C373009202A0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +241,8 @@
 				35EC08AB20FAA5D60096CCC8 /* Colorspin */,
 				35EC093520FBEE5C0096CCC8 /* ColorspinTests */,
 				35EC08AA20FAA5D60096CCC8 /* Products */,
+				B0850735326C2C56AC17ADB5 /* Pods */,
+				0FB2C7FBF8C9E5D0BA50EE36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -293,6 +326,21 @@
 			path = colorspinModelTests;
 			sourceTree = "<group>";
 		};
+		B0850735326C2C56AC17ADB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B69F5684922AF30BCF60BC5D /* Pods-Colorspin.debug.xcconfig */,
+				BAF64ED8EF9AF1DA3668E724 /* Pods-Colorspin.release.xcconfig */,
+				BA9D76A4F702796C19B37B93 /* Pods-colorspinModelTests.debug.xcconfig */,
+				80F53A3DBA0F39319CAC3F62 /* Pods-colorspinModelTests.release.xcconfig */,
+				BBC27BA93F5000D8F9B42BB6 /* Pods-colorspinUtilitiesTests.debug.xcconfig */,
+				06A0585F8244228054A4FE3F /* Pods-colorspinUtilitiesTests.release.xcconfig */,
+				269B50F87486F64D97552C4C /* Pods-colorspinViewsTests.debug.xcconfig */,
+				AF7414EB6070D97F0969F5B3 /* Pods-colorspinViewsTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,9 +348,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35182CE3210954F6009202A0 /* Build configuration list for PBXNativeTarget "colorspinUtilitiesTests" */;
 			buildPhases = (
+				6EAB3445E2EAD6596CA6F7C0 /* [CP] Check Pods Manifest.lock */,
 				35182CD6210954F5009202A0 /* Sources */,
 				35182CD7210954F5009202A0 /* Frameworks */,
 				35182CD8210954F5009202A0 /* Resources */,
+				354935FB210E0906002760B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -318,9 +368,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35182CF7210CA6F0009202A0 /* Build configuration list for PBXNativeTarget "colorspinViewsTests" */;
 			buildPhases = (
+				D20B06AD85C4FDE3763920A1 /* [CP] Check Pods Manifest.lock */,
 				35182CEC210CA6F0009202A0 /* Sources */,
 				35182CED210CA6F0009202A0 /* Frameworks */,
 				35182CEE210CA6F0009202A0 /* Resources */,
+				354935FC210E090D002760B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -336,9 +388,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35EC08D720FAA5D80096CCC8 /* Build configuration list for PBXNativeTarget "Colorspin" */;
 			buildPhases = (
+				68DAA879F0CF0FB07F0A88DD /* [CP] Check Pods Manifest.lock */,
 				35EC08A520FAA5D60096CCC8 /* Sources */,
 				35EC08A620FAA5D60096CCC8 /* Frameworks */,
 				35EC08A720FAA5D60096CCC8 /* Resources */,
+				354935F9210E08C3002760B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -353,9 +407,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35EC09AD20FC05320096CCC8 /* Build configuration list for PBXNativeTarget "colorspinModelTests" */;
 			buildPhases = (
+				32531565F6A2873ED25166CD /* [CP] Check Pods Manifest.lock */,
 				35EC09A220FC05320096CCC8 /* Sources */,
 				35EC09A320FC05320096CCC8 /* Frameworks */,
 				35EC09A420FC05320096CCC8 /* Resources */,
+				354935FA210E08FB002760B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -453,6 +509,136 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32531565F6A2873ED25166CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-colorspinModelTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		354935F9210E08C3002760B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			showEnvVarsInLog = 0;
+		};
+		354935FA210E08FB002760B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			showEnvVarsInLog = 0;
+		};
+		354935FB210E0906002760B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			showEnvVarsInLog = 0;
+		};
+		354935FC210E090D002760B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
+		68DAA879F0CF0FB07F0A88DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Colorspin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EAB3445E2EAD6596CA6F7C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-colorspinUtilitiesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D20B06AD85C4FDE3763920A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-colorspinViewsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		35182CD6210954F5009202A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -548,6 +734,7 @@
 /* Begin XCBuildConfiguration section */
 		35182CE1210954F6009202A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBC27BA93F5000D8F9B42BB6 /* Pods-colorspinUtilitiesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -568,6 +755,7 @@
 		};
 		35182CE2210954F6009202A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06A0585F8244228054A4FE3F /* Pods-colorspinUtilitiesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -588,6 +776,7 @@
 		};
 		35182CF8210CA6F0009202A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 269B50F87486F64D97552C4C /* Pods-colorspinViewsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -610,6 +799,7 @@
 		};
 		35182CF9210CA6F0009202A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF7414EB6070D97F0969F5B3 /* Pods-colorspinViewsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -747,6 +937,7 @@
 		};
 		35EC08D820FAA5D80096CCC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B69F5684922AF30BCF60BC5D /* Pods-Colorspin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -765,6 +956,7 @@
 		};
 		35EC08D920FAA5D80096CCC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAF64ED8EF9AF1DA3668E724 /* Pods-Colorspin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -783,6 +975,7 @@
 		};
 		35EC09AE20FC05320096CCC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA9D76A4F702796C19B37B93 /* Pods-colorspinModelTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -803,6 +996,7 @@
 		};
 		35EC09AF20FC05320096CCC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80F53A3DBA0F39319CAC3F62 /* Pods-colorspinModelTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

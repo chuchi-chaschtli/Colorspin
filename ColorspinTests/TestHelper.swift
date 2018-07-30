@@ -13,7 +13,7 @@ extension XCTestCase {
     var fixedRect: CGRect {
         return CGRect(x: 0, y: 0, width: 375, height: 667)
     }
-    
+
     var fixedDate: Date
     {
         var dateComponents = DateComponents()
@@ -24,7 +24,7 @@ extension XCTestCase {
         dateComponents.minute = 0
         dateComponents.second = 0
         dateComponents.calendar = .current
-        
+
         return dateComponents.date!
     }
 }

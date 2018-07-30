@@ -38,7 +38,7 @@ extension Particle: JSONParser {
         guard let json = json else {
             throw JSONParseError.empty
         }
-        
+
         guard let x = json["x"] as? CGFloat,
             let y = json["y"] as? CGFloat,
             let radius = json["radius"] as? CGFloat,
@@ -47,16 +47,16 @@ extension Particle: JSONParser {
             let color = UIColor.stringsToColors[colorString] else {
                 throw JSONParseError.fail
         }
-        
+
         let repeatEvery = json["repeatEvery"] as? Int ?? 1
         let starting = json["startingTick"] as? Int ?? 0
-        
+
         self.init(at: CGPoint(x: x, y: y), radius: radius, color: color, speed: speed, repeatEvery: repeatEvery, starting: starting)
     }
 }
 
 extension Particle: Equatable {
-    static func ==(lhs: Particle, rhs: Particle) -> Bool {
+    static func == (lhs: Particle, rhs: Particle) -> Bool {
         return lhs.node == rhs.node && lhs.speed == rhs.speed
     }
 }

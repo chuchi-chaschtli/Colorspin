@@ -47,7 +47,7 @@ extension Level: JSONParser {
 }
 
 extension Level: Equatable {
-    static func ==(lhs: Level, rhs: Level) -> Bool {
+    static func == (lhs: Level, rhs: Level) -> Bool {
         return lhs.wheel == rhs.wheel && lhs.particles == rhs.particles
     }
 }
