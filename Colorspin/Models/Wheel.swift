@@ -81,7 +81,7 @@ extension Wheel: JSONParser {
 
         let slices = try slicesObject.split(separator: ",").compactMap({slice -> (CGFloat, UIColor)? in
             let sliceParts = slice.split(separator: ":")
-            guard let color = UIColor.stringsToColors[String(sliceParts[0])], let value = Float(String(sliceParts[1])) else {
+            guard let color = UIColor(name: String(sliceParts[0])), let value = Float(String(sliceParts[1])) else {
                 throw JSONParseError.malformed
             }
             return (CGFloat(value), color)

@@ -95,6 +95,6 @@ class WheelTests: XCTestCase {
         let wheel = try? Wheel(json: json)
 
         XCTAssertNotNil(wheel)
-        XCTAssertEqual(wheel?.topSlice?.fillColor, .green)
+        XCTAssertEqual(wheel?.topSlice?.fillColor.description, UIColor(red: 0, green: 128.0 / 255.0, blue: 0, alpha: 1).description)
     }
 }

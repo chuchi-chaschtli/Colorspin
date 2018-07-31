@@ -11,9 +11,17 @@ import XCTest
 
 class ColorExtensionTests: XCTestCase {
 
-    func testColorDictionarySetup() {
-        XCTAssertNotNil(UIColor.stringsToColors)
-        XCTAssertTrue(UIColor.stringsToColors.count > 0)
-        XCTAssertEqual(UIColor.stringsToColors["red"], .red)
+    func testColorFromHTMLFriendlyName() {
+        XCTAssertNotNil(UIColor(name: "red"))
+        XCTAssertEqual(UIColor(name: "red"), .red)
+    }
+
+    func testColorFromHTMLFriendlyNameGetsFormattedAppropriately() {
+        XCTAssertNotNil(UIColor(name: "R E d"))
+        XCTAssertEqual(UIColor(name: "R E d"), .red)
+    }
+
+    func testColorFromInvalidNameIsNil() {
+        XCTAssertNil(UIColor(name: "ayy lmao"))
     }
 }

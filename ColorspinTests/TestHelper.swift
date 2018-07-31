@@ -14,8 +14,7 @@ extension XCTestCase {
         return CGRect(x: 0, y: 0, width: 375, height: 667)
     }
 
-    var fixedDate: Date
-    {
+    var fixedDate: Date {
         var dateComponents = DateComponents()
         dateComponents.month = 1
         dateComponents.day = 1
@@ -27,6 +26,13 @@ extension XCTestCase {
 
         return dateComponents.date!
     }
+
+    var fixedStars: Stars {
+        let bronze = Star(scoreToReach: 1, type: .bronze)
+        let silver = Star(scoreToReach: 2, type: .silver)
+        let gold = Star(scoreToReach: 3, type: .gold)
+        return (bronze: bronze, silver: silver, gold: gold)
+    }
 }
 
 // MARK: - Fixtures
@@ -35,8 +41,7 @@ extension XCTestCase {
         return try? FileReader.read(fileName, encoding: "json")
     }
 
-    var levelData: Data
-    {
+    var levelData: Data {
         return dataFromFixtureNamed("level")!
     }
 }
