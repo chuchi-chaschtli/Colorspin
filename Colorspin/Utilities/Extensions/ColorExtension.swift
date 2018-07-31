@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// MARK: - HTML friendly names
 private extension UIColor {
     static let colorNamesToHexStrings: [String: String] = [
         "aliceblue": "F0F8FF",
@@ -156,6 +157,7 @@ private extension UIColor {
     ]
 }
 
+// MARK: - Initializer
 extension UIColor {
     public convenience init?(name: String) {
         let formattedName = name.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "grey", with: "gray").lowercased()

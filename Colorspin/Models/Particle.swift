@@ -33,6 +33,7 @@ struct Particle {
     }
 }
 
+// MARK: - JSON
 extension Particle: JSONParser {
     init(json: JSON?) throws {
         guard let json = json else {
@@ -55,6 +56,7 @@ extension Particle: JSONParser {
     }
 }
 
+// MARK: - Equatable
 extension Particle: Equatable {
     static func == (lhs: Particle, rhs: Particle) -> Bool {
         return lhs.node == rhs.node && lhs.speed == rhs.speed
