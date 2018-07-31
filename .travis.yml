@@ -2,5 +2,5 @@ language: objective-c
 osx_image: xcode9.4
 script:
   - set -o pipefail
-  - xcodebuild -workspace Colorspin.xcworkspace -scheme Colorspin -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - xcodebuild clean test -workspace Colorspin.xcworkspace -scheme ColorspinDebug -destination "platform=iOS Simulator,name=iPhone 7,OS=11.4" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO -quiet | xcpretty -c
   - swiftlint

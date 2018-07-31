@@ -38,4 +38,4 @@ disabled_rules:
   - force_try
   - force_cast
   - cyclomatic_complexity
-  - function_length
+  - function_body_length
