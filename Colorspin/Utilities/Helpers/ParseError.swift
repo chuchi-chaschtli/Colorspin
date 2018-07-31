@@ -13,3 +13,7 @@ enum JSONParseError: Error {
     case fail
     case malformed
 }
+
+enum FileParseError: Error {
+    case notFound
+}

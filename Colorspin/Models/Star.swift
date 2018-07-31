@@ -25,7 +25,7 @@ struct Star {
 }
 
 extension Star: JSONParser {
-    init(json: JSON?, timestamp: Date = Date()) throws {
+    init(json: JSON?) throws {
         guard let json = json else {
             throw JSONParseError.empty
         }

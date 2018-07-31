@@ -11,7 +11,7 @@ import Foundation
 struct FileReader {
     static func read(_ name: String, encoding: String = "json") throws -> Data {
         guard let path = Bundle.main.path(forResource: name, ofType: encoding) else {
-            throw JSONParseError.malformed
+            throw FileParseError.notFound
         }
 
         do {

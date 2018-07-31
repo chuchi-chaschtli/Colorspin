@@ -9,7 +9,7 @@
 import Foundation
 
 struct LevelCache {
-    static var completedLevelNumbers: [Int] {()
+    static var completedLevelNumbers: [Int] {
         return UserDefaults.levels.keys.compactMap { (levelString) -> Int? in
             return Int(levelString)
         }
