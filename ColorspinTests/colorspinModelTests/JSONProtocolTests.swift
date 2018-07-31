@@ -316,7 +316,7 @@ class JSONProtocolTests: XCTestCase {
 private extension JSONProtocolTests {
     struct MockJSONModel: JSONParser {
         var mockField = ""
-        init(json: JSON?, timestamp: Date = Date()) throws {
+        init(json: JSON?) throws {
             guard let mockField = json?["test"] as? String else {
                 throw JSONParseError.fail
             }

@@ -26,14 +26,16 @@ struct Level {
     }
 }
 
+// MARK: - Helpers
 extension Level {
     var millisecondsPerTick: Double {
         return 1000.0 / Double(tps)
     }
 }
 
+// MARK: - JSON
 extension Level: JSONParser {
-    init(json: JSON?, timestamp: Date = Date()) throws {
+    init(json: JSON?) throws {
         guard let json = json else {
             throw JSONParseError.empty
         }
@@ -53,6 +55,7 @@ extension Level: JSONParser {
     }
 }
 
+// MARK: - Equatable
 extension Level: Equatable {
     static func == (lhs: Level, rhs: Level) -> Bool {
         return lhs.wheel == rhs.wheel

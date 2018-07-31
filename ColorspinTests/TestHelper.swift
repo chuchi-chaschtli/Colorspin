@@ -37,11 +37,15 @@ extension XCTestCase {
 
 // MARK: - Fixtures
 extension XCTestCase {
-    func dataFromFixtureNamed(_ fileName: String) -> Data? {
-        return try? FileReader.read(fileName, encoding: "json")
+    func dataFromFixtureNamed(_ fileName: String) -> Data {
+        return try! FileReader.read(fileName, encoding: "json")
     }
 
     var levelData: Data {
-        return dataFromFixtureNamed("level")!
+        return dataFromFixtureNamed("level")
+    }
+
+    var wheelData: Data {
+        return dataFromFixtureNamed("wheel")
     }
 }

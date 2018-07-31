@@ -15,12 +15,14 @@ private enum UserDefaultKeys: String {
     static let values: [UserDefaultKeys] = [coins, levels]
 }
 
+// MARK: - Setup
 private extension UserDefaults {
     static var colorspinData: UserDefaults {
         return UserDefaults(suiteName: Bundle().bundleIdentifier) ?? UserDefaults.standard
     }
 }
 
+// MARK: - Helpers
 extension UserDefaults {
     static func clearData() {
         UserDefaultKeys.values.forEach { (key) in

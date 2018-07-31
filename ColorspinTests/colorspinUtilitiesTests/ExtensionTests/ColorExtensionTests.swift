@@ -24,4 +24,9 @@ class ColorExtensionTests: XCTestCase {
     func testColorFromInvalidNameIsNil() {
         XCTAssertNil(UIColor(name: "ayy lmao"))
     }
+
+    func testColorParsesGreyToGray() {
+        XCTAssertNotNil(UIColor(name: "grey"))
+        XCTAssertEqual(UIColor(name: "grey"), UIColor(name: "gray"))
+    }
 }
