@@ -22,74 +22,6 @@ class GameScene: SKScene {
     private (set) var lastTick: Date?
     private (set) var tick: Int = 0
 
-    override func sceneDidLoad() {
-        level = try? Level(data: FileReader.read("level1"))
-
-        anchorPoint = CGPoint(x: 0, y: 1)
-        backgroundColor = .lightGray
-
-        scoreLabel = self.childNode(withName: "//scoreLabel") as? SKLabelNode
-        scoreLabel?.text = "Score: \(score)"
-    }
-
-    override func didMove(to view: SKView) {
-        level?.wheel.nodes.forEach({ (node) in
-            addChild(node)
-        })
-
-        let pressed = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(sender:)))
-        pressed.delegate = self
-        pressed.minimumPressDuration = 0.2
-        view.addGestureRecognizer(pressed)
-
-        start()
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let firstTouch = touches.first else {
-            return
-        }
-
-        level?.wheel.rotate(reverse: firstTouch.location(in: view).x >= (view?.frame.width ?? 0) / 2)
-    }
-
-    @objc func longPressed(sender: UILongPressGestureRecognizer) {
-        level?.wheel.rotate(for: 0.9, reverse: sender.location(in: view).x >= (view?.frame.width ?? 0) / 2)
-    }
-
-    func start() {
-        lastTick = Date()
-    }
-
-    func stop() {
-        lastTick = nil
-    }
-
-    override func update(_ currentTime: TimeInterval) {
-        guard let level = level, let lastTick = lastTick else {
-            return
-        }
-
-        despawnParticles()
-        spawnedParticles.forEach { (particle) in
-            particle.node.position.y -= particle.speed
-        }
-
-        var timePassed = 1000.0
-        if Build.isRunningUnitTests {
-            timePassed *= currentTime
-        } else {
-            timePassed *= -lastTick.timeIntervalSinceNow
-        }
-
-        if timePassed > level.millisecondsPerTick {
-            self.lastTick = Date()
-
-            spawnParticles()
-            tick += 1
-        }
-    }
-
     private func spawnParticles() {
         var particlesToSpawn = level?.particles.filter({ (particle) -> Bool in
             tick % particle.repeatEvery == particle.starting && tick >= particle.starting
@@ -122,8 +54,80 @@ class GameScene: SKScene {
         }
         spawnedParticles = separatedParticles.matching
     }
+
+    func start() {
+        lastTick = Date()
+    }
+
+    func stop() {
+        lastTick = nil
+    }
+
+    @objc func longPressed(sender: UILongPressGestureRecognizer) {
+        level?.wheel.rotate(for: 0.9, reverse: sender.location(in: view).x >= (view?.frame.width ?? 0) / 2)
+    }
 }
 
+// MARK: - Lifecycle
+extension GameScene {
+    override func sceneDidLoad() {
+        level = try? Level(data: FileReader.read("level1"))
+
+        anchorPoint = CGPoint(x: 0, y: 1)
+        backgroundColor = .lightGray
+
+        scoreLabel = self.childNode(withName: "//scoreLabel") as? SKLabelNode
+        scoreLabel?.text = "Score: \(score)"
+    }
+
+    override func didMove(to view: SKView) {
+        level?.wheel.nodes.forEach({ (node) in
+            addChild(node)
+        })
+
+        let pressed = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(sender:)))
+        pressed.delegate = self
+        pressed.minimumPressDuration = 0.2
+        view.addGestureRecognizer(pressed)
+
+        start()
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let firstTouch = touches.first else {
+            return
+        }
+
+        level?.wheel.rotate(reverse: firstTouch.location(in: view).x >= (view?.frame.width ?? 0) / 2)
+    }
+
+    override func update(_ currentTime: TimeInterval) {
+        guard let level = level, let lastTick = lastTick else {
+            return
+        }
+
+        despawnParticles()
+        spawnedParticles.forEach { (particle) in
+            particle.node.position.y -= particle.speed
+        }
+
+        var timePassed = 1000.0
+        if Build.isRunningUnitTests {
+            timePassed *= currentTime
+        } else {
+            timePassed *= -lastTick.timeIntervalSinceNow
+        }
+
+        if timePassed > level.millisecondsPerTick {
+            self.lastTick = Date()
+
+            spawnParticles()
+            tick += 1
+        }
+    }
+}
+
+// MARK: - UIGestureRecognizerDelegate
 extension GameScene: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                            shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {

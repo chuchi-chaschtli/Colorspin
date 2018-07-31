@@ -11,7 +11,7 @@ import Foundation
 typealias JSON = [String: Any?]
 
 protocol JSONParser {
-    init(json: JSON?, timestamp: Date) throws
+    init(json: JSON?) throws
 }
 
 extension JSONParser {
@@ -22,9 +22,7 @@ extension JSONParser {
 
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            let data: [Model] = try Self.array(from: json as AnyObject?)
-
-            return data
+            return try (Self.array(from: json as AnyObject?) as [Model])
         } catch {
             throw error
         }
@@ -37,7 +35,7 @@ extension JSONParser {
 
         if let array = json as? [JSON] {
             return array.compactMap({ (json) -> Model? in
-                try? Model(json: json, timestamp: Date())
+                try? Model(json: json)
             })
         }
 
@@ -45,24 +43,22 @@ extension JSONParser {
             throw JSONParseError.fail
         }
 
-        var data = [Model]()
         if json.isEmpty {
-            return data
+            return []
         }
 
         do {
-            data.append(try Model(json: json, timestamp: Date()))
+            return [(try Model(json: json))]
         } catch {
             throw error
         }
-        return data
     }
 
-    init(data: Data, timestamp: Date = Date()) throws {
+    init(data: Data) throws {
         guard let json = (try? JSONSerialization.jsonObject(with: data, options: [])) as? JSON else {
             throw JSONParseError.fail
         }
 
-        try self.init(json: json, timestamp: timestamp)
+        try self.init(json: json)
     }
 }

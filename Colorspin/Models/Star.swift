@@ -24,8 +24,9 @@ struct Star {
     var type: StarType
 }
 
+// MARK: - JSON
 extension Star: JSONParser {
-    init(json: JSON?, timestamp: Date = Date()) throws {
+    init(json: JSON?) throws {
         guard let json = json else {
             throw JSONParseError.empty
         }
@@ -40,6 +41,7 @@ extension Star: JSONParser {
     }
 }
 
+// MARK: - Equatable
 extension Star: Equatable {
     static func == (lhs: Star, rhs: Star) -> Bool {
         return lhs.scoreToReach == rhs.scoreToReach && lhs.type == rhs.type

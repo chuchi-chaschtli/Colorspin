@@ -9,6 +9,10 @@
 import Foundation
 
 extension Array {
+    /// Splits an array into two arrays based on a filtering predicate.
+    ///
+    /// - Parameter predicate: The predicate to filter the given array
+    /// - Returns: two arrays. The matching array contains elements satisfying this predicate, the notMatching array contains every other element.
     func separate(using predicate: (Element) -> Bool) -> (matching: [Element], notMatching: [Element]) {
         var groups: ([Element], [Element]) = ([], [])
         self.forEach { (element) in
@@ -21,6 +25,10 @@ extension Array {
         return groups
     }
 
+    /// Mutating for each function
+    ///
+    /// - Parameter body: Function to mutate the elements in the array.
+    /// - Throws: if mutation fails
     mutating func mutateEach(body: (inout Element) throws -> Void) rethrows {
         for index in self.indices {
             try body(&self[index])

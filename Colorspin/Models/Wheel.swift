@@ -45,6 +45,7 @@ struct Wheel {
     }
 }
 
+// MARK: - Helpers
 extension Wheel {
     var topSlice: SKShapeNode? {
         return nodes.first(where: { (node) -> Bool in
@@ -66,8 +67,9 @@ extension Wheel {
     }
 }
 
+// MARK: - JSON
 extension Wheel: JSONParser {
-    init(json: JSON?, timestamp: Date = Date()) throws {
+    init(json: JSON?) throws {
         guard let json = json else {
             throw JSONParseError.empty
         }
@@ -91,6 +93,7 @@ extension Wheel: JSONParser {
     }
 }
 
+// MARK: - Equatable
 extension Wheel: Equatable {
     static func == (lhs: Wheel, rhs: Wheel) -> Bool {
         return lhs.nodes == rhs.nodes

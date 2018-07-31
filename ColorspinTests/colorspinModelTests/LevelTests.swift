@@ -10,27 +10,30 @@ import XCTest
 @testable import Colorspin
 
 class LevelTests: XCTestCase {
+    private var fixedWheel: Wheel!
+
+    override func setUp() {
+        fixedWheel = try! Wheel(data: wheelData)
+    }
 
     func testLevelEquatable() {
-        let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
         let particle = Particle(at: CGPoint(x: 40, y: 100), radius: 20, color: .red, speed: 1.5)
 
-        let level1 = Level(wheel: wheel, particles: [particle], stars: fixedStars)
-        let level2 = Level(wheel: wheel, particles: [], stars: fixedStars)
+        let level1 = Level(wheel: fixedWheel, particles: [particle], stars: fixedStars)
+        let level2 = Level(wheel: fixedWheel, particles: [], stars: fixedStars)
 
         XCTAssertFalse(level1 == level2)
         XCTAssertTrue(level1 == level1)
     }
 
     func testLevelSetup() {
-        let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
         let particle1 = Particle(at: CGPoint(x: 40, y: 100), radius: 20, color: .red, speed: 1.5)
         let particle2 = Particle(at: CGPoint(x: 40, y: 100), radius: 20, color: .green, speed: 1.5)
 
-        let level = Level(wheel: wheel, particles: [particle1, particle2], stars: fixedStars, safetyBuffer: 0.3, tps: 4)
+        let level = Level(wheel: fixedWheel, particles: [particle1, particle2], stars: fixedStars, safetyBuffer: 0.3, tps: 4)
 
         XCTAssertEqual(level.particles.count, 2)
-        XCTAssertEqual(level.wheel, wheel)
+        XCTAssertEqual(level.wheel, fixedWheel)
         XCTAssertEqual(level.safetyBuffer, 0.3)
         XCTAssertEqual(level.tps, 4)
         XCTAssertEqual(level.millisecondsPerTick, 250.0)

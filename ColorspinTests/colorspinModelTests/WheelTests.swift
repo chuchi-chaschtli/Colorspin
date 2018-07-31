@@ -60,7 +60,7 @@ class WheelTests: XCTestCase {
     }
 
     func testWheelRotateAngle() {
-        let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
+        let wheel = try! Wheel(data: wheelData)
 
         wheel.rotate(for: 0.3)
 
@@ -74,7 +74,7 @@ class WheelTests: XCTestCase {
     }
 
     func testWheelRotateMaintainsState() {
-        let wheel = Wheel(slices: [(scale: 1, color: .green), (scale: 2, color: .black)], center: CGPoint(x: 40, y: 100), radius: 50)
+        let wheel = try! Wheel(data: wheelData)
 
         wheel.rotate()
         wheel.nodes.forEach { (node) in
