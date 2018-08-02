@@ -26,10 +26,12 @@ class UserDefaultsExtensionTests: XCTestCase {
     func testClearDataRemovesUserDefaults() {
         UserDefaults.set(newLevels: fixedLevels)
         UserDefaults.set(coins: 30)
+        UserDefaults.set(currentLevel: 20)
 
         UserDefaults.clearData()
 
         XCTAssertEqual(UserDefaults.coins, 0)
+        XCTAssertEqual(UserDefaults.currentlevel, 0)
         XCTAssertEqual(UserDefaults.levels, [:])
     }
 
@@ -43,5 +45,11 @@ class UserDefaultsExtensionTests: XCTestCase {
         UserDefaults.set(newLevels: fixedLevels)
 
         XCTAssertEqual(UserDefaults.levels, fixedLevels)
+    }
+
+    func testSetCurrentLevelUpdatesDefaults() {
+        UserDefaults.set(currentLevel: 30)
+
+        XCTAssertEqual(UserDefaults.currentlevel, 30)
     }
 }

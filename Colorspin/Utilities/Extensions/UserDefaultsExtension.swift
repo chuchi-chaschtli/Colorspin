@@ -10,9 +10,10 @@ import Foundation
 
 private enum UserDefaultKeys: String {
     case coins
+    case currentLevel
     case levels
 
-    static let values: [UserDefaultKeys] = [coins, levels]
+    static let values: [UserDefaultKeys] = [coins, currentLevel, levels]
 }
 
 // MARK: - Setup
@@ -35,12 +36,20 @@ extension UserDefaults {
         return colorspinData.integer(forKey: UserDefaultKeys.coins.rawValue)
     }
 
+    static var currentlevel: Int {
+        return colorspinData.integer(forKey: UserDefaultKeys.currentLevel.rawValue)
+    }
+
     static var levels: [String: Int] {
         return (colorspinData.dictionary(forKey: UserDefaultKeys.levels.rawValue) as? [String: Int]) ?? [:]
     }
 
     static func set(coins: Int) {
         colorspinData.set(coins, forKey: UserDefaultKeys.coins.rawValue)
+    }
+
+    static func set(currentLevel: Int) {
+        colorspinData.set(currentLevel, forKey: UserDefaultKeys.currentLevel.rawValue)
     }
 
     static func set(newLevels: [String: Int]) {

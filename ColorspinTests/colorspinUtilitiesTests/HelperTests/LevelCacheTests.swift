@@ -99,6 +99,33 @@ class LevelCacheTests: XCTestCase {
         XCTAssertEqual(UserDefaults.coins, 50)
         XCTAssertFalse(withdrawalSucceeded)
     }
+
+    func testGetLevelFromNumberSucceedsIfFound() {
+        var level: Level?
+        var parseError: Error?
+        do {
+            level = try LevelCache.getLevel(from: 1)
+        } catch let error {
+            parseError = error
+        }
+
+        XCTAssertNil(parseError)
+        XCTAssertNotNil(level)
+    }
+
+    func testGetLevelFromNumberFailsIfNotFound() {
+        var level: Level?
+        var parseError: Error?
+        do {
+            level = try LevelCache.getLevel(from: 254784365923)
+        } catch let error {
+            parseError = error
+        }
+
+        XCTAssertNotNil(parseError)
+        XCTAssertEqual(parseError as? FileParseError, .notFound)
+        XCTAssertNil(level)
+    }
 }
 
 private extension LevelCacheTests {

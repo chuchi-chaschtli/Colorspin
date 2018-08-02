@@ -40,3 +40,11 @@ struct LevelCache {
         return diff >= 0
     }
 }
+
+extension LevelCache {
+    static func getLevel(from number: Int) throws -> Level {
+        let fileName = "level\(number)"
+
+        return try Level(data: FileReader.read(fileName))
+    }
+}
