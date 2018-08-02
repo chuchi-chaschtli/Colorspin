@@ -80,7 +80,9 @@ def setup_wheel():
 
 def setup_particles():
     particles = []
-    num_particles = parse_int_input_with_bounds('Enter how many particles you would like to add for this level', 1, sys.maxsize)
+    num_particles = parse_int_input_with_bounds(
+        'Enter how many particles you would like to add for this level', 
+        1, sys.maxsize)
     for i in range(0, num_particles):
         print('Setting up particle #' + str(i + 1))
         x = parse_float_input('Enter the x position of the particle')
