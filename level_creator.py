@@ -15,7 +15,7 @@ usable_colors = []
 
 
 #### CONSOLE READER HELPER FUNCTIONS ####
-def parse_int_input_with_bounds(prompt, min, max):
+def parse_int_input_with_bounds(prompt: str, min: int, max: int):
     value = 0
 
     try:
@@ -27,10 +27,10 @@ def parse_int_input_with_bounds(prompt, min, max):
         print('The value `' + str(value) 
             + '` is invalid. Defaulting to minimum value `' + str(min) 
             + '`...')
-        value = 0
+        value = min
     return value
 
-def parse_float_input_with_bounds(prompt, min, max):
+def parse_float_input_with_bounds(prompt: str, min: float, max: float):
     value = 0
 
     try:
@@ -42,16 +42,16 @@ def parse_float_input_with_bounds(prompt, min, max):
         print('The value `' + str(value) 
             + '` is invalid. Defaulting to minimum value `' + str(min) 
             + '`...')
-        value = 0
+        value = min
     return value
 
-def parse_int_input(prompt):
+def parse_int_input(prompt: str):
     return parse_int_input_with_bounds(prompt, 0, 0)
 
-def parse_float_input(prompt):
+def parse_float_input(prompt: str):
     return parse_float_input_with_bounds(prompt, 0, 0)
 
-def check_bounds(val, min, max):
+def check_bounds(val: float, min: float, max: float):
     return (min + max == 0 and val >= 0) or min <= val <= max
 
 
