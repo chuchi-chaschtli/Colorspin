@@ -17,6 +17,7 @@ class GameScene: SKScene {
             scoreLabel?.text = "Score: \(score)"
         }
     }
+    private (set) var levelLabel: SKLabelNode?
     private (set) var scoreLabel: SKLabelNode?
 
     private (set) var lastTick: Date?
@@ -71,13 +72,16 @@ class GameScene: SKScene {
 // MARK: - Lifecycle
 extension GameScene {
     override func sceneDidLoad() {
-        level = try? Level(data: FileReader.read("level1"))
+        level = try? LevelCache.getLevel(from: UserDefaults.currentlevel)
 
         anchorPoint = CGPoint(x: 0, y: 1)
         backgroundColor = .lightGray
 
         scoreLabel = self.childNode(withName: "//scoreLabel") as? SKLabelNode
         scoreLabel?.text = "Score: \(score)"
+
+        levelLabel = self.childNode(withName: "//levelLabel") as? SKLabelNode
+        levelLabel?.text = "Level: \(UserDefaults.currentlevel)"
     }
 
     override func didMove(to view: SKView) {

@@ -12,6 +12,7 @@ import XCTest
 class UserDefaultsExtensionTests: XCTestCase {
 
     private let fixedLevels: [String: Int] = ["1": 2, "2": 1]
+    private let fixedUnlockedLevels: [Int] = [1, 2, 3]
 
     override func setUp() {
         super.setUp()
@@ -26,11 +27,15 @@ class UserDefaultsExtensionTests: XCTestCase {
     func testClearDataRemovesUserDefaults() {
         UserDefaults.set(newLevels: fixedLevels)
         UserDefaults.set(coins: 30)
+        UserDefaults.set(currentLevel: 20)
+        UserDefaults.set(unlockedLevels: fixedUnlockedLevels)
 
         UserDefaults.clearData()
 
         XCTAssertEqual(UserDefaults.coins, 0)
+        XCTAssertEqual(UserDefaults.currentlevel, 0)
         XCTAssertEqual(UserDefaults.levels, [:])
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
     }
 
     func testSetCoinsUpdatesDefaults() {
@@ -43,5 +48,17 @@ class UserDefaultsExtensionTests: XCTestCase {
         UserDefaults.set(newLevels: fixedLevels)
 
         XCTAssertEqual(UserDefaults.levels, fixedLevels)
+    }
+
+    func testSetCurrentLevelUpdatesDefaults() {
+        UserDefaults.set(currentLevel: 30)
+
+        XCTAssertEqual(UserDefaults.currentlevel, 30)
+    }
+
+    func testSetUnlockedLevelsUpdatesDefaults() {
+        UserDefaults.set(unlockedLevels: fixedUnlockedLevels)
+
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1, 2, 3])
     }
 }

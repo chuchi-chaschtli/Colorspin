@@ -33,6 +33,10 @@ extension XCTestCase {
         let gold = Star(scoreToReach: 3, type: .gold)
         return (bronze: bronze, silver: silver, gold: gold)
     }
+
+    var fixedCost: Cost {
+        return Cost(stars: 5, coins: 7)
+    }
 }
 
 // MARK: - Fixtures
