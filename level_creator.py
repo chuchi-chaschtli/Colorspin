@@ -14,8 +14,8 @@ usable_colors = []
 
 
 
-#### CONSOLE READER HELPER FUNCTIONS ####
-def parse_int_input_with_bounds(prompt: str, min: int, max: int):
+# CONSOLE READER HELPER FUNCTIONS #
+def parse_int_input_with_bounds(prompt: str, min: int, max: int) -> int:
     value = 0
 
     try:
@@ -30,7 +30,7 @@ def parse_int_input_with_bounds(prompt: str, min: int, max: int):
         value = min
     return value
 
-def parse_float_input_with_bounds(prompt: str, min: float, max: float):
+def parse_float_input_with_bounds(prompt: str, min: float, max: float) -> float:
     value = 0
 
     try:
@@ -45,19 +45,19 @@ def parse_float_input_with_bounds(prompt: str, min: float, max: float):
         value = min
     return value
 
-def parse_int_input(prompt: str):
+def parse_int_input(prompt: str) -> int:
     return parse_int_input_with_bounds(prompt, 0, 0)
 
-def parse_float_input(prompt: str):
+def parse_float_input(prompt: str) -> float:
     return parse_float_input_with_bounds(prompt, 0, 0)
 
-def check_bounds(val: float, min: float, max: float):
+def check_bounds(val: float, min: float, max: float) -> bool:
     return (min + max == 0 and val >= 0) or min <= val <= max
 
 
 
-#### DATA SETUP HELPER FUNCTIONS ####
-def setup_wheel():
+# DATA SETUP HELPER FUNCTIONS #
+def setup_wheel() -> dict:
     radius = parse_float_input('Enter the radius of the wheel')
     centerX = parse_float_input('Enter the x position of the wheel center')
     centerY = parse_float_input('Enter the y position of the wheel center')
@@ -78,7 +78,7 @@ def setup_wheel():
             'radius': radius, 
             'slices': ','.join(slices)}
 
-def setup_particles():
+def setup_particles() -> list:
     particles = []
     num_particles = parse_int_input_with_bounds(
         'Enter how many particles you would like to add for this level', 
@@ -107,7 +107,7 @@ def setup_particles():
 
     return particles
 
-def parse_particle_colors():
+def parse_particle_colors() -> str:
     formatted_usable_colors = ', '.join(str(e) for e in set(usable_colors))
     formatted_usable_colors = '[%s]' % formatted_usable_colors
     color = input('Enter the color (one of ' + formatted_usable_colors 
@@ -118,7 +118,7 @@ def parse_particle_colors():
         color = usable_colors[0]
     return color
 
-def setup_stars():
+def setup_stars() -> list:
     stars = []
     for type in StarType:
         threshold = parse_int_input('Enter the score threshold for a ' 
@@ -126,9 +126,14 @@ def setup_stars():
         stars.append({'type': type.value, 'scoreThreshold': threshold})
     return stars
 
+def setup_cost() -> dict:
+    stars = parse_int_input('Enter the total cost in stars to unlock this level')
+    coins = parse_int_input('Enter the total cost in coins to unlock this level')
+    return {'stars': stars, 'coins': coins}
 
 
-#### MAIN SCRIPT ####
+
+# MAIN SCRIPT #
 if __name__ == '__main__':
     print('=========================================')
     print('Now setting up a new json level format...')
@@ -149,6 +154,9 @@ if __name__ == '__main__':
     print('\nWoohoo! Now beginning star setup...\n')
     stars = setup_stars()
 
+    print('\nGood work. Now beginning cost setup...\n')
+    cost = setup_cost()
+
     filename = 'level' + str(level) + '.json'
     with open('Colorspin/Levels/' + filename, 'w') as outfile:
         json.dump(
@@ -157,7 +165,8 @@ if __name__ == '__main__':
                 'safetyBuffer': safety_buffer, 
                 'wheel': wheel, 
                 'particles': particles, 
-                'stars': stars
+                'stars': stars,
+                'cost': cost
             }, 
             outfile, indent = 4)
     print(filename + ' has been successfully saved.')

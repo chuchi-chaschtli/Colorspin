@@ -26,6 +26,12 @@ struct LevelCache {
     static func completeLevel(levelNumber: Int, starsEarned: Int) {
         let levelString = "\(levelNumber)"
         UserDefaults.set(newLevels: [levelString: starsEarned])
+
+        var levelId = highestLevel + 1
+        if Build.isRunningUnitTests {
+            levelId = -1
+        }
+        _ = unlockWithStars(level: highestLevel + 1, cost: (try? getLevel(from: levelId))?.cost.stars)
     }
 
     static func add(coins: Int) {
@@ -39,11 +45,27 @@ struct LevelCache {
         }
         return diff >= 0
     }
+
+    private static func unlockWithStars(level: Int, cost: Int?) -> Bool {
+        guard let cost = cost else {
+            return false
+        }
+
+        if !UserDefaults.unlockedLevels.contains(level) {
+            let canUnlock = cost <= totalStarsEarned
+
+            if canUnlock {
+                UserDefaults.set(unlockedLevels: UserDefaults.unlockedLevels + [level])
+            }
+            return canUnlock
+        }
+        return true
+    }
 }
 
 extension LevelCache {
     static func getLevel(from number: Int) throws -> Level {
-        let fileName = "level\(number)"
+        let fileName = "level" + (number > -1 ? "\(number)" : "")
 
         return try Level(data: FileReader.read(fileName))
     }

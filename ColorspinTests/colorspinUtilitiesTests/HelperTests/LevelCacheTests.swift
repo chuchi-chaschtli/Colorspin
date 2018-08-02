@@ -61,17 +61,28 @@ class LevelCacheTests: XCTestCase {
     }
 
     func testCompleteLevelFirstTimeSavesToUserDefaults() {
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
         LevelCache.completeLevel(levelNumber: 75, starsEarned: 40)
 
         XCTAssertEqual(UserDefaults.levels, fixedLevels.update(with: ["75": 40]))
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1, 76])
         XCTAssertEqual(LevelCache.totalStarsEarned, 46)
     }
 
     func testCompleteLevelAlreadyCompletedSavesToUserDefaults() {
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
         LevelCache.completeLevel(levelNumber: 1, starsEarned: 40)
 
         XCTAssertEqual(UserDefaults.levels, fixedLevels.update(with: ["1": 40]))
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1, 11])
         XCTAssertEqual(LevelCache.totalStarsEarned, 43)
+    }
+
+    func testCompleteLevelWithNotEnoughStarsEarnedKeepsNextLevelLocked() {
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
+        LevelCache.completeLevel(levelNumber: 1, starsEarned: 1)
+
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
     }
 
     func testAddCoins() {
