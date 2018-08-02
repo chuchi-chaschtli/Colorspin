@@ -43,6 +43,9 @@
 		35ABF6F2210F9BB40055EC81 /* LevelCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF6F1210F9BB40055EC81 /* LevelCacheTests.swift */; };
 		35ABF6F4210FF8CE0055EC81 /* wheel.json in Resources */ = {isa = PBXBuildFile; fileRef = 35ABF6F3210FF8CE0055EC81 /* wheel.json */; };
 		35ABF6F7210FFBB90055EC81 /* FileReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF6F6210FFBB90055EC81 /* FileReaderTests.swift */; };
+		35ABF6FF21133CF90055EC81 /* GameSceneViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF6FE21133CF90055EC81 /* GameSceneViewControllerTests.swift */; };
+		35ABF701211352620055EC81 /* Cost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF700211352620055EC81 /* Cost.swift */; };
+		35ABF703211359560055EC81 /* CostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF702211359560055EC81 /* CostTests.swift */; };
 		35EC08AD20FAA5D60096CCC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC08AC20FAA5D60096CCC8 /* AppDelegate.swift */; };
 		35EC08B320FAA5D60096CCC8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC08B220FAA5D60096CCC8 /* GameScene.swift */; };
 		35EC08B820FAA5D70096CCC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35EC08B620FAA5D70096CCC8 /* Main.storyboard */; };
@@ -112,6 +115,9 @@
 		35ABF6F1210F9BB40055EC81 /* LevelCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCacheTests.swift; sourceTree = "<group>"; };
 		35ABF6F3210FF8CE0055EC81 /* wheel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wheel.json; sourceTree = "<group>"; };
 		35ABF6F6210FFBB90055EC81 /* FileReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReaderTests.swift; sourceTree = "<group>"; };
+		35ABF6FE21133CF90055EC81 /* GameSceneViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneViewControllerTests.swift; sourceTree = "<group>"; };
+		35ABF700211352620055EC81 /* Cost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cost.swift; sourceTree = "<group>"; };
+		35ABF702211359560055EC81 /* CostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostTests.swift; sourceTree = "<group>"; };
 		35EC08A920FAA5D60096CCC8 /* Colorspin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colorspin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35EC08AC20FAA5D60096CCC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35EC08B220FAA5D60096CCC8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -244,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				35182CFA210CC80C009202A0 /* GameSceneTests.swift */,
+				35ABF6FE21133CF90055EC81 /* GameSceneViewControllerTests.swift */,
 			);
 			path = colorspinViewsTests;
 			sourceTree = "<group>";
@@ -356,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				35182CC12103F502009202A0 /* Protocols */,
+				35ABF700211352620055EC81 /* Cost.swift */,
 				35182CCC2104E286009202A0 /* Level.swift */,
 				35182CAD20FC1630009202A0 /* Particle.swift */,
 				356DB63F210E3E63005B3C53 /* Star.swift */,
@@ -379,6 +387,7 @@
 		35EC094320FBEF0B0096CCC8 /* colorspinModelTests */ = {
 			isa = PBXGroup;
 			children = (
+				35ABF702211359560055EC81 /* CostTests.swift */,
 				35182CEA210C9FD5009202A0 /* JSONProtocolTests.swift */,
 				35182CD421054CD7009202A0 /* LevelTests.swift */,
 				35182CD221054B50009202A0 /* ParticleTests.swift */,
@@ -722,6 +731,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35ABF6FF21133CF90055EC81 /* GameSceneViewControllerTests.swift in Sources */,
 				35182CFB210CC80C009202A0 /* GameSceneTests.swift in Sources */,
 				35182CFF210CCDAB009202A0 /* TestHelper.swift in Sources */,
 			);
@@ -731,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35ABF701211352620055EC81 /* Cost.swift in Sources */,
 				35EC08B320FAA5D60096CCC8 /* GameScene.swift in Sources */,
 				35182CCD2104E286009202A0 /* Level.swift in Sources */,
 				35182CC32103F517009202A0 /* JSONProtocol.swift in Sources */,
@@ -756,6 +767,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35182CFD210CCDAB009202A0 /* TestHelper.swift in Sources */,
+				35ABF703211359560055EC81 /* CostTests.swift in Sources */,
 				35182CA920FC065F009202A0 /* WheelTests.swift in Sources */,
 				35182CEB210C9FD5009202A0 /* JSONProtocolTests.swift in Sources */,
 				35182CD321054B50009202A0 /* ParticleTests.swift in Sources */,

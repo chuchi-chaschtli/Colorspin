@@ -61,17 +61,28 @@ class LevelCacheTests: XCTestCase {
     }
 
     func testCompleteLevelFirstTimeSavesToUserDefaults() {
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
         LevelCache.completeLevel(levelNumber: 75, starsEarned: 40)
 
         XCTAssertEqual(UserDefaults.levels, fixedLevels.update(with: ["75": 40]))
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1, 76])
         XCTAssertEqual(LevelCache.totalStarsEarned, 46)
     }
 
     func testCompleteLevelAlreadyCompletedSavesToUserDefaults() {
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
         LevelCache.completeLevel(levelNumber: 1, starsEarned: 40)
 
         XCTAssertEqual(UserDefaults.levels, fixedLevels.update(with: ["1": 40]))
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1, 11])
         XCTAssertEqual(LevelCache.totalStarsEarned, 43)
+    }
+
+    func testCompleteLevelWithNotEnoughStarsEarnedKeepsNextLevelLocked() {
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
+        LevelCache.completeLevel(levelNumber: 1, starsEarned: 1)
+
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
     }
 
     func testAddCoins() {
@@ -98,6 +109,33 @@ class LevelCacheTests: XCTestCase {
 
         XCTAssertEqual(UserDefaults.coins, 50)
         XCTAssertFalse(withdrawalSucceeded)
+    }
+
+    func testGetLevelFromNumberSucceedsIfFound() {
+        var level: Level?
+        var parseError: Error?
+        do {
+            level = try LevelCache.getLevel(from: 1)
+        } catch let error {
+            parseError = error
+        }
+
+        XCTAssertNil(parseError)
+        XCTAssertNotNil(level)
+    }
+
+    func testGetLevelFromNumberFailsIfNotFound() {
+        var level: Level?
+        var parseError: Error?
+        do {
+            level = try LevelCache.getLevel(from: 254784365923)
+        } catch let error {
+            parseError = error
+        }
+
+        XCTAssertNotNil(parseError)
+        XCTAssertEqual(parseError as? FileParseError, .notFound)
+        XCTAssertNil(level)
     }
 }
 

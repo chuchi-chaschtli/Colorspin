@@ -14,13 +14,15 @@ struct Level {
     var wheel: Wheel
     var particles: [Particle]
     var stars: Stars
+    var cost: Cost
     var safetyBuffer: Double
     var tps: Int
 
-    init(wheel: Wheel, particles: [Particle], stars: Stars, safetyBuffer: Double = 0.2, tps: Int = 1) {
+    init(wheel: Wheel, particles: [Particle], stars: Stars, cost: Cost, safetyBuffer: Double = 0.2, tps: Int = 1) {
         self.wheel = wheel
         self.particles = particles
         self.stars = stars
+        self.cost = cost
         self.safetyBuffer = safetyBuffer.clamp(0, 1)
         self.tps = Int(Double(tps).clamp(1, 60))
     }
@@ -43,6 +45,7 @@ extension Level: JSONParser {
         guard let wheel: Wheel = try? Wheel(json: json["wheel"] as? JSON),
             let particles: [Particle] = try? Particle.array(from: json["particles"] as? [JSON]),
             let stars: [Star] = try? Star.array(from: json["stars"] as? [JSON]),
+            let cost: Cost = try? Cost(json: json["cost"] as? JSON),
             let safetyBuffer = json["safetyBuffer"] as? Double else {
                 throw JSONParseError.fail
         }
@@ -51,7 +54,7 @@ extension Level: JSONParser {
 
         let tps = json["tps"] as? Int ?? 1
 
-        self.init(wheel: wheel, particles: particles, stars: formattedStars, safetyBuffer: safetyBuffer, tps: tps)
+        self.init(wheel: wheel, particles: particles, stars: formattedStars, cost: cost, safetyBuffer: safetyBuffer, tps: tps)
     }
 }
 
@@ -61,6 +64,7 @@ extension Level: Equatable {
         return lhs.wheel == rhs.wheel
             && lhs.particles == rhs.particles
             && lhs.stars == rhs.stars
+            && lhs.cost == rhs.cost
             && lhs.safetyBuffer == rhs.safetyBuffer
             && lhs.tps == rhs.tps
     }

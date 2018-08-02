@@ -30,6 +30,9 @@ class GameSceneTests: XCTestCase {
         XCTAssertEqual(sut.anchorPoint, CGPoint(x: 0, y: 1))
         XCTAssertNotNil(sut.level)
         XCTAssertNotNil(sut.scoreLabel)
+        XCTAssertEqual(sut.scoreLabel?.text, "Score: 0")
+        XCTAssertNotNil(sut.levelLabel)
+        XCTAssertEqual(sut.levelLabel?.text, "Level: 1")
     }
 
     func testSceneInitCallsDidLoad() {
