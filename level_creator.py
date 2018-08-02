@@ -6,16 +6,16 @@ import sys
 import json
 
 class StarType(Enum):
-BRONZE = 'bronze'
-SILVER = 'silver'
-GOLD = 'gold'
+    BRONZE = 'bronze'
+    SILVER = 'silver'
+    GOLD = 'gold'
 
-usableColors = []
+usable_colors = []
 
 
 
 #### CONSOLE READER HELPER FUNCTIONS ####
-def readIntInputWithBounds(prompt, min, max):
+def parse_int_input_with_bounds(prompt, min, max):
     value = 0
 
     try:
@@ -23,12 +23,14 @@ def readIntInputWithBounds(prompt, min, max):
     except Exception as error:
         print('Error! Integer must be specified. Defaulting to 0.\n')
 
-    if not checkBounds(value, min, max):
-        print('The value `' + str(value) + '` is invalid. Defaulting to minimum value `' + str(min) + '`...')
+    if not check_bounds(value, min, max):
+        print('The value `' + str(value) 
+            + '` is invalid. Defaulting to minimum value `' + str(min) 
+            + '`...')
         value = 0
     return value
 
-def readFloatInputWithBounds(prompt, min, max):
+def parse_float_input_with_bounds(prompt, min, max):
     value = 0
 
     try:
@@ -36,93 +38,124 @@ def readFloatInputWithBounds(prompt, min, max):
     except Exception as error:
         print('Error! Floating point must be specified. Defaulting to 0.\n')
 
-    if not checkBounds(value, min, max):
-        print('The value `' + str(value) + '` is invalid. Defaulting to minimum value `' + str(min) + '`...')
+    if not check_bounds(value, min, max):
+        print('The value `' + str(value) 
+            + '` is invalid. Defaulting to minimum value `' + str(min) 
+            + '`...')
         value = 0
     return value
 
-def readIntInput(prompt):
-    return readIntInputWithBounds(prompt, 0, 0)
+def parse_int_input(prompt):
+    return parse_int_input_with_bounds(prompt, 0, 0)
 
-def readFloatInput(prompt):
-    return readFloatInputWithBounds(prompt, 0, 0)
+def parse_float_input(prompt):
+    return parse_float_input_with_bounds(prompt, 0, 0)
 
-def checkBounds(val, min, max):
+def check_bounds(val, min, max):
     return (min + max == 0 and val >= 0) or min <= val <= max
 
 
 
 #### DATA SETUP HELPER FUNCTIONS ####
-def setupWheelData():
-    radius = readFloatInput('Enter the radius of the wheel')
-    centerX = readFloatInput('Enter the x position of the wheel center')
-    centerY = readFloatInput('Enter the y position of the wheel center')
-    numSlices = readIntInputWithBounds('Enter how many slices you would like to add for this wheel', 1, sys.maxsize)
+def setup_wheel():
+    radius = parse_float_input('Enter the radius of the wheel')
+    centerX = parse_float_input('Enter the x position of the wheel center')
+    centerY = parse_float_input('Enter the y position of the wheel center')
+    num_slices = parse_int_input_with_bounds(
+        'Enter how many slices you would like to add for this wheel', 
+        1, sys.maxsize)
     slices = []
 
-    for i in range(0, numSlices):
+    for i in range(0, num_slices):
         color = input('Enter the color for slice #' + str(i + 1) + ':\n')
-        usableColors.append(color)
-        scale = readFloatInput('Now enter the scalar value for slice #' + str(i + 1))
+        usable_colors.append(color)
+        scale = parse_float_input('Now enter the scalar value for slice #' 
+            + str(i + 1))
         slices.append(color + ':' + str(scale))
 
-    return {'centerX': centerX, 'centerY': centerY, 'radius': radius, 'slices': ','.join(slices)}
+    return {'centerX': centerX, 
+            'centerY': centerY, 
+            'radius': radius, 
+            'slices': ','.join(slices)}
 
-def setupParticleData():
+def setup_particles():
     particles = []
-    numParticles = readIntInputWithBounds('Enter how many particles you would like to add for this level', 1, sys.maxsize)
-    for i in range(0, numParticles):
+    num_particles = parse_int_input_with_bounds('Enter how many particles you would like to add for this level', 1, sys.maxsize)
+    for i in range(0, num_particles):
         print('Setting up particle #' + str(i + 1))
-        x = readFloatInput('Enter the x position of the particle')
-        y = readFloatInput('Enter the y position of the particle')
-        radius = readFloatInput('Enter the radius of the particle')
+        x = parse_float_input('Enter the x position of the particle')
+        y = parse_float_input('Enter the y position of the particle')
+        radius = parse_float_input('Enter the radius of the particle')
 
-        color = setupParticleColor()
+        color = parse_particle_colors()
 
-        speed = readFloatInput('Enter the speed of the particle')
-        repeat = readIntInput('Enter the repeat interval of the particle in ticks')
-        starting = readIntInput('Enter the start time of the particle in ticks')
-        particles.append({'x': x, 'y': y, 'radius': radius, 'color': color, 'speed': speed, 'repeatEvery': repeat, 'startingTick': starting})
+        speed = parse_float_input('Enter the speed of the particle')
+        repeat = parse_int_input(
+            'Enter the repeat interval of the particle in ticks')
+        starting = parse_int_input(
+            'Enter the start time of the particle in ticks')
+        particles.append({
+            'x': x, 
+            'y': y, 
+            'radius': radius, 
+            'color': color, 
+            'speed': speed, 
+            'repeatEvery': repeat, 
+            'startingTick': starting})
 
     return particles
 
-def setupParticleColor():
-    formattedUsableColors = ', '.join(str(e) for e in set(usableColors))
-    formattedUsableColors = '[%s]' % formattedUsableColors
-    color = input('Enter the color (one of ' + formattedUsableColors + ') of the particle:\n')
-    if color not in set(usableColors):
-        print('Invalid color specified. Defaulting to ' + usableColors[0] + '.')
-        color = usableColors[0]
+def parse_particle_colors():
+    formatted_usable_colors = ', '.join(str(e) for e in set(usable_colors))
+    formatted_usable_colors = '[%s]' % formatted_usable_colors
+    color = input('Enter the color (one of ' + formatted_usable_colors 
+        + ') of the particle:\n')
+    if color not in set(usable_colors):
+        print('Invalid color specified. Defaulting to ' + usable_colors[0] 
+            + '.')
+        color = usable_colors[0]
     return color
 
-def setupStarData():
+def setup_stars():
     stars = []
     for type in StarType:
-        threshold = readIntInput('Enter the score threshold for a ' + type.value + ' star')
+        threshold = parse_int_input('Enter the score threshold for a ' 
+            + type.value + ' star')
         stars.append({'type': type.value, 'scoreThreshold': threshold})
     return stars
 
 
 
 #### MAIN SCRIPT ####
-    if __name__ == '__main__':
+if __name__ == '__main__':
     print('=========================================')
     print('Now setting up a new json level format...')
     print('=========================================')
-    level = readIntInputWithBounds('Enter a level number (int > 0)', 1, sys.maxsize)
-    tps = readIntInputWithBounds('Enter the tps for the level (int in [0, 60])', 0, 60)
-    safetyBuffer = readFloatInputWithBounds('Enter the safety buffer for the level (float in [0, 1])', 0, 1)
+    level = parse_int_input_with_bounds('Enter a level number (int > 0)', 1, 
+        sys.maxsize)
+    tps = parse_int_input_with_bounds(
+        'Enter the tps for the level (int in [0, 60])', 0, 60)
+    safety_buffer = parse_float_input_with_bounds(
+        'Enter the safety buffer for the level (float in [0, 1])', 0, 1)
 
     print('\nAwesome. Now beginning wheel setup...\n')
-    wheel = setupWheelData()
+    wheel = setup_wheel()
 
     print('\nSweet. Now beginning particle setup...\n')
-    particles = setupParticleData()
+    particles = setup_particles()
 
     print('\nWoohoo! Now beginning star setup...\n')
-    stars = setupStarData()
+    stars = setup_stars()
 
-    fileName = 'level' + str(level) + '.json'
-    with open('Colorspin/Levels/' + fileName, 'w') as outputFile:
-        json.dump({'tps': tps, 'safetyBuffer': safetyBuffer, 'wheel': wheel, 'particles': particles, 'stars': stars}, outputFile, indent = 4)
-    print(fileName + ' has been successfully saved.')
+    filename = 'level' + str(level) + '.json'
+    with open('Colorspin/Levels/' + filename, 'w') as outfile:
+        json.dump(
+            {
+                'tps': tps, 
+                'safetyBuffer': safety_buffer, 
+                'wheel': wheel, 
+                'particles': particles, 
+                'stars': stars
+            }, 
+            outfile, indent = 4)
+    print(filename + ' has been successfully saved.')
