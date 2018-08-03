@@ -62,5 +62,6 @@
         "coins": 10
     },
     "safetyBuffer": 0.2,
-    "tps": 1
+    "tps": 1,
+    "finalTick": 200
 }

@@ -133,6 +133,7 @@ private extension UIColor {
         "saddlebrown": "8B4513",
         "salmon": "FA8072",
         "sandybrown": "F4A460",
+        "scarlet": "D80617",
         "seagreen": "2E8B57",
         "seashell": "FFF5EE",
         "sienna": "A0522D",

@@ -17,11 +17,13 @@ class GameScene: SKScene {
             scoreLabel?.text = "Score: \(score)"
         }
     }
-    private (set) var levelLabel: SKLabelNode?
-    private (set) var scoreLabel: SKLabelNode?
 
     private (set) var lastTick: Date?
     private (set) var tick: Int = 0
+
+    private (set) var levelLabel: SKLabelNode!
+    private (set) var scoreLabel: SKLabelNode!
+    private (set) var timeLeftLabel: SKLabelNode!
 
     private func spawnParticles() {
         var particlesToSpawn = level?.particles.filter({ (particle) -> Bool in
@@ -48,12 +50,16 @@ class GameScene: SKScene {
         }
 
         separatedParticles.notMatching.forEach { (particle) in
-            if particle.node.fillColor == wheel.topSlice?.fillColor {
-                score += 1
-            }
-            particle.node.removeFromParent()
+            incrementScoreAndRemove(particle: particle)
         }
         spawnedParticles = separatedParticles.matching
+    }
+
+    private func incrementScoreAndRemove(particle: Particle) {
+        if particle.node.fillColor == level?.wheel.topSlice?.fillColor {
+            score += 1
+        }
+        particle.node.removeFromParent()
     }
 
     func start() {
@@ -62,6 +68,11 @@ class GameScene: SKScene {
 
     func stop() {
         lastTick = nil
+
+        spawnedParticles.forEach { (particle) in
+            incrementScoreAndRemove(particle: particle)
+        }
+        spawnedParticles.removeAll()
     }
 
     @objc func longPressed(sender: UILongPressGestureRecognizer) {
@@ -78,10 +89,12 @@ extension GameScene {
         backgroundColor = .lightGray
 
         scoreLabel = self.childNode(withName: "//scoreLabel") as? SKLabelNode
-        scoreLabel?.text = "Score: \(score)"
+        scoreLabel.text = "Score: \(score)"
 
         levelLabel = self.childNode(withName: "//levelLabel") as? SKLabelNode
-        levelLabel?.text = "Level: \(UserDefaults.currentlevel)"
+        levelLabel.text = "Level: \(UserDefaults.currentlevel)"
+
+        timeLeftLabel = self.childNode(withName: "//timeLeftLabel") as? SKLabelNode
     }
 
     override func didMove(to view: SKView) {
@@ -109,24 +122,27 @@ extension GameScene {
         guard let level = level, let lastTick = lastTick else {
             return
         }
+        let remainingTime = level.timeRemaining(at: tick)
+        timeLeftLabel.text = "Time: \(remainingTime.timeLeft)"
+        timeLeftLabel.fontColor = UIColor(name: (remainingTime.runningOut ? "scarlet" : "green"))
 
         despawnParticles()
         spawnedParticles.forEach { (particle) in
             particle.node.position.y -= particle.speed
         }
 
-        var timePassed = 1000.0
-        if Build.isRunningUnitTests {
-            timePassed *= currentTime
-        } else {
-            timePassed *= -lastTick.timeIntervalSinceNow
-        }
+        let timePassed = 1000.0 * (Build.isRunningUnitTests ? currentTime : -lastTick.timeIntervalSinceNow)
 
         if timePassed > level.millisecondsPerTick {
             self.lastTick = Date()
 
             spawnParticles()
             tick += 1
+        }
+
+        if tick >= level.finalTick {
+            stop()
+            timeLeftLabel.text = "Time: --:--"
         }
     }
 }
