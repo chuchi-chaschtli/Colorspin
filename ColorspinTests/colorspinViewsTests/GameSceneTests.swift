@@ -30,9 +30,11 @@ class GameSceneTests: XCTestCase {
         XCTAssertEqual(sut.anchorPoint, CGPoint(x: 0, y: 1))
         XCTAssertNotNil(sut.level)
         XCTAssertNotNil(sut.scoreLabel)
-        XCTAssertEqual(sut.scoreLabel?.text, "Score: 0")
+        XCTAssertEqual(sut.scoreLabel.text, "Score: 0")
         XCTAssertNotNil(sut.levelLabel)
-        XCTAssertEqual(sut.levelLabel?.text, "Level: 1")
+        XCTAssertEqual(sut.levelLabel.text, "Level: 1")
+        XCTAssertNotNil(sut.timeLeftLabel)
+        XCTAssertEqual(sut.timeLeftLabel.text, "")
     }
 
     func testSceneInitCallsDidLoad() {
@@ -112,15 +114,21 @@ class GameSceneTests: XCTestCase {
         sut.set(lastTick: fixedDate)
 
         sut.update(2)
+        XCTAssertNotNil(sut.lastTick)
         XCTAssertEqual(sut.spawnedParticles.count, 2)
-        XCTAssertEqual(sut.scoreLabel?.text, "Score: 0")
+        XCTAssertEqual(sut.scoreLabel.text, "Score: 0")
+        XCTAssertEqual(sut.timeLeftLabel.text, "Time: 03:20")
+        XCTAssertEqual(sut.timeLeftLabel.fontColor?.description, UIColor(name: "green")?.description)
 
         for _ in 0...1000 {
             sut.update(2)
         }
 
-        XCTAssertEqual(sut.spawnedParticles.count, 257)
-        XCTAssertEqual(sut.scoreLabel?.text, "Score: 9")
+        XCTAssertNil(sut.lastTick)
+        XCTAssertEqual(sut.spawnedParticles.count, 0)
+        XCTAssertEqual(sut.scoreLabel.text, "Score: 7")
+        XCTAssertEqual(sut.timeLeftLabel.text, "Time: --:--")
+        XCTAssertEqual(sut.timeLeftLabel.fontColor?.description, UIColor(name: "scarlet")?.description)
     }
 }
 
