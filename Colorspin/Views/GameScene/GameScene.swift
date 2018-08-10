@@ -73,6 +73,28 @@ class GameScene: SKScene {
             incrementScoreAndRemove(particle: particle)
         }
         spawnedParticles.removeAll()
+        awardStars()
+    }
+
+    private func awardStars() {
+        guard let stars = level?.stars else {
+            return
+        }
+
+        var starsEarned = 0
+        if score >= stars.gold.scoreToReach {
+            starsEarned = 3
+        } else if score >= stars.silver.scoreToReach {
+            starsEarned = 2
+        } else if score >= stars.bronze.scoreToReach {
+            starsEarned = 1
+        }
+
+        if starsEarned > 0 {
+            LevelCache.completeLevel(levelNumber: UserDefaults.currentlevel, starsEarned: starsEarned)
+        } else {
+            // NOTIFY USER THEY DIDNT PASS LEVEL
+        }
     }
 
     @objc func longPressed(sender: UILongPressGestureRecognizer) {
