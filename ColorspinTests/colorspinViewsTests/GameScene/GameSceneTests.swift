@@ -24,7 +24,6 @@ class GameSceneTests: XCTestCase {
     override func tearDown() {
         UserDefaults.clearData()
         sut = nil
-        UserDefaults.clearData()
 
         super.tearDown()
     }
