@@ -24,6 +24,7 @@ class GameSceneTests: XCTestCase {
     override func tearDown() {
         UserDefaults.clearData()
         sut = nil
+        UserDefaults.clearData()
 
         super.tearDown()
     }
@@ -131,6 +132,22 @@ class GameSceneTests: XCTestCase {
         XCTAssertEqual(sut.scoreLabel.text, "Score: 7")
         XCTAssertEqual(sut.timeLeftLabel.text, "Time: --:--")
         XCTAssertEqual(sut.timeLeftLabel.fontColor?.description, UIColor(name: "scarlet")?.description)
+    }
+
+    func testStopTriggersAwardStars() {
+        sut.didMove(to: SKView(frame: fixedRect))
+        sut.set(lastTick: fixedDate)
+
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
+        XCTAssertEqual(UserDefaults.levels, [:])
+
+        for _ in 0...1000 {
+            sut.update(2)
+        }
+
+        XCTAssertNil(sut.lastTick)
+        XCTAssertEqual(UserDefaults.unlockedLevels, [1])
+        XCTAssertEqual(UserDefaults.levels, ["1": 2])
     }
 }
 
