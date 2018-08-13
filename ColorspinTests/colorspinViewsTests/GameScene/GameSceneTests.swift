@@ -28,7 +28,7 @@ class GameSceneTests: XCTestCase {
         super.tearDown()
     }
 
-    func testSceneSetup() {
+    func testSceneIsBeautiful() {
         XCTAssertEqual(sut.anchorPoint, CGPoint(x: 0, y: 1))
         XCTAssertNotNil(sut.level)
         XCTAssertNotNil(sut.scoreLabel)
