@@ -62,20 +62,6 @@ class GameScene: SKScene {
         particle.node.removeFromParent()
     }
 
-    func start() {
-        lastTick = Date()
-    }
-
-    func stop() {
-        lastTick = nil
-
-        spawnedParticles.forEach { (particle) in
-            incrementScoreAndRemove(particle: particle)
-        }
-        spawnedParticles.removeAll()
-        awardStars()
-    }
-
     private func awardStars() {
         guard let stars = level?.stars else {
             return
@@ -93,7 +79,7 @@ class GameScene: SKScene {
         if starsEarned > 0 {
             LevelCache.completeLevel(levelNumber: UserDefaults.currentlevel, starsEarned: starsEarned)
         } else {
-            // NOTIFY USER THEY DIDNT PASS LEVEL
+            // TODO: notify user + restart
         }
     }
 
@@ -102,11 +88,53 @@ class GameScene: SKScene {
     }
 }
 
-// MARK: - Lifecycle
-extension GameScene {
-    override func sceneDidLoad() {
-        level = try? LevelCache.getLevel(from: UserDefaults.currentlevel)
+// MARK: - Game
+extension GameScene: Game {
+    func start() {
+        lastTick = Date()
+    }
 
+    func stop() {
+        lastTick = nil
+
+        spawnedParticles.forEach { (particle) in
+            incrementScoreAndRemove(particle: particle)
+        }
+        spawnedParticles.removeAll()
+        awardStars()
+    }
+
+    // TODO: USE PAUSE/RESUME/RESTART FUNCTIONALITY
+    func pause() {
+        lastTick = nil
+    }
+
+    func resume() {
+        lastTick = Date()
+    }
+
+    func restart() {
+        let wasPlaying = lastTick != nil
+
+        lastTick = nil
+        spawnedParticles.forEach { (particle) in
+            particle.node.removeFromParent()
+        }
+        if spawnedParticles.count > 0 {
+            spawnedParticles.removeAll()
+        }
+
+        tick = 0
+        score = 0
+        if wasPlaying {
+            lastTick = Date()
+        }
+    }
+}
+
+// MARK: - Beautify
+extension GameScene: Beautify {
+    func beautify() {
         anchorPoint = CGPoint(x: 0, y: 1)
         backgroundColor = .lightGray
 
@@ -117,6 +145,23 @@ extension GameScene {
         levelLabel.text = "Level: \(UserDefaults.currentlevel)"
 
         timeLeftLabel = self.childNode(withName: "//timeLeftLabel") as? SKLabelNode
+    }
+
+    private func updateTimeLeft() {
+        guard let level = level else {
+            return
+        }
+
+        timeLeftLabel.text = "Time: \(level.timeLeft(at: tick))"
+        timeLeftLabel.fontColor = UIColor(name: (level.isTimeRunningOut(at: tick) ? "scarlet" : "green"))
+    }
+}
+
+// MARK: - Lifecycle
+extension GameScene {
+    override func sceneDidLoad() {
+        level = try? LevelCache.getLevel(from: UserDefaults.currentlevel)
+        beautify()
     }
 
     override func didMove(to view: SKView) {
@@ -144,9 +189,7 @@ extension GameScene {
         guard let level = level, let lastTick = lastTick else {
             return
         }
-        let remainingTime = level.timeRemaining(at: tick)
-        timeLeftLabel.text = "Time: \(remainingTime.timeLeft)"
-        timeLeftLabel.fontColor = UIColor(name: (remainingTime.runningOut ? "scarlet" : "green"))
+        updateTimeLeft()
 
         despawnParticles()
         spawnedParticles.forEach { (particle) in
