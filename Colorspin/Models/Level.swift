@@ -36,18 +36,25 @@ extension Level {
         return 1000.0 / Double(tps)
     }
 
-    func timeRemaining(at tick: Int) -> (timeLeft: String, runningOut: Bool) {
+    private func timeRemaining(at tick: Int) -> Double {
         let totalSeconds = Double(finalTick) / Double(tps)
         let currentSeconds = Double(tick) / Double(tps)
 
-        let timeRemaining = totalSeconds - currentSeconds
+        return totalSeconds - currentSeconds
+    }
 
-        let minutes = Int(timeRemaining) / 60
-        let seconds = Int(timeRemaining) % 60
+    func timeLeft(at tick: Int) -> String {
+        let timeLeft = timeRemaining(at: tick)
+        let minutes = Int(timeLeft) / 60
+        let seconds = Int(timeLeft) % 60
 
         let formattedMinutes = (minutes < 10 ? "0" : "") + "\(minutes)"
         let formattedSeconds = (seconds < 10 ? "0" : "") + "\(seconds)"
-        return ("\(formattedMinutes):\(formattedSeconds)", timeRemaining <= 10)
+        return "\(formattedMinutes):\(formattedSeconds)"
+    }
+
+    func isTimeRunningOut(at tick: Int) -> Bool {
+        return timeRemaining(at: tick) <= 10
     }
 }
 

@@ -14,7 +14,7 @@ class MainMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
+        beautify()
         navigationController?.isNavigationBarHidden = true
 
         playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
@@ -23,5 +23,12 @@ class MainMenuViewController: UIViewController {
     @objc private func playButtonTapped() {
         let gameSceneViewController = GameSceneViewController()
         navigationController?.pushViewController(gameSceneViewController, animated: true)
+    }
+}
+
+// MARK: - Beautify
+extension MainMenuViewController: Beautify {
+    func beautify() {
+        view.backgroundColor = .lightGray
     }
 }

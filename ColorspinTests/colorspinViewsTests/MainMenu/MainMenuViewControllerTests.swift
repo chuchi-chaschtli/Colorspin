@@ -25,8 +25,11 @@ class MainMenuViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
-    func testViewDidLoad() {
+    func testIsBeautiful() {
         XCTAssertEqual(sut.view.backgroundColor, .lightGray)
+    }
+
+    func testViewDidLoad() {
         XCTAssertEqual(sut.playButton.allTargets.count, 1)
     }
 

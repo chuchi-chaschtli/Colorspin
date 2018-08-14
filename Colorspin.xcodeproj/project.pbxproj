@@ -41,6 +41,8 @@
 		3597B56D211E529200FECE2A /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597B56B211E529200FECE2A /* MainMenuViewController.swift */; };
 		3597B56E211E529200FECE2A /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3597B56C211E529200FECE2A /* MainMenuViewController.xib */; };
 		3597B578211E587F00FECE2A /* MainMenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597B577211E587F00FECE2A /* MainMenuViewControllerTests.swift */; };
+		3597B57B2121108C00FECE2A /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597B57A2121108C00FECE2A /* GameProtocol.swift */; };
+		3597B57D212110BB00FECE2A /* Beautify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597B57C212110BB00FECE2A /* Beautify.swift */; };
 		35ABF6EC210F99060055EC81 /* DictionaryExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF6EB210F99060055EC81 /* DictionaryExtensionTests.swift */; };
 		35ABF6EE210F9A330055EC81 /* UserDefaultsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF6ED210F9A330055EC81 /* UserDefaultsExtensionTests.swift */; };
 		35ABF6F2210F9BB40055EC81 /* LevelCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF6F1210F9BB40055EC81 /* LevelCacheTests.swift */; };
@@ -114,6 +116,8 @@
 		3597B56B211E529200FECE2A /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		3597B56C211E529200FECE2A /* MainMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
 		3597B577211E587F00FECE2A /* MainMenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewControllerTests.swift; sourceTree = "<group>"; };
+		3597B57A2121108C00FECE2A /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		3597B57C212110BB00FECE2A /* Beautify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beautify.swift; sourceTree = "<group>"; };
 		35ABF6EB210F99060055EC81 /* DictionaryExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionTests.swift; sourceTree = "<group>"; };
 		35ABF6ED210F9A330055EC81 /* UserDefaultsExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensionTests.swift; sourceTree = "<group>"; };
 		35ABF6F1210F9BB40055EC81 /* LevelCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCacheTests.swift; sourceTree = "<group>"; };
@@ -302,6 +306,15 @@
 			path = MainMenu;
 			sourceTree = "<group>";
 		};
+		3597B5792121106900FECE2A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				3597B57A2121108C00FECE2A /* GameProtocol.swift */,
+				3597B57C212110BB00FECE2A /* Beautify.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		35ABF6EF210F9B820055EC81 /* ExtensionTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,8 +383,9 @@
 		35EC08E020FBC0220096CCC8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3597B568211E518C00FECE2A /* MainMenu */,
 				35EC08E120FBC0570096CCC8 /* GameScene */,
+				3597B568211E518C00FECE2A /* MainMenu */,
+				3597B5792121106900FECE2A /* Protocol */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -769,12 +783,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				35ABF701211352620055EC81 /* Cost.swift in Sources */,
+				3597B57B2121108C00FECE2A /* GameProtocol.swift in Sources */,
 				35EC08B320FAA5D60096CCC8 /* GameScene.swift in Sources */,
 				35182CCD2104E286009202A0 /* Level.swift in Sources */,
 				35182CC32103F517009202A0 /* JSONProtocol.swift in Sources */,
 				356DB640210E3E63005B3C53 /* Star.swift in Sources */,
 				35182CC52103F723009202A0 /* ColorExtension.swift in Sources */,
 				35182CAE20FC1630009202A0 /* Particle.swift in Sources */,
+				3597B57D212110BB00FECE2A /* Beautify.swift in Sources */,
 				35EC08AD20FAA5D60096CCC8 /* AppDelegate.swift in Sources */,
 				356DB64B210F5C87005B3C53 /* LevelCache.swift in Sources */,
 				35182CC82104C5B0009202A0 /* FileReader.swift in Sources */,

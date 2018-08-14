@@ -64,16 +64,16 @@ class LevelTests: XCTestCase {
 
     func testLevelTimeRemaining() {
         let level = Level(wheel: fixedWheel, particles: [], stars: fixedStars, cost: fixedCost, tps: 1, finalTick: 218)
-        XCTAssertEqual(level.timeRemaining(at: 0).timeLeft, "03:38")
-        XCTAssertEqual(level.timeRemaining(at: 38).timeLeft, "03:00")
-        XCTAssertEqual(level.timeRemaining(at: 158).timeLeft, "01:00")
-        XCTAssertEqual(level.timeRemaining(at: 215).timeLeft, "00:03")
-        XCTAssertEqual(level.timeRemaining(at: 218).timeLeft, "00:00")
+        XCTAssertEqual(level.timeLeft(at: 0), "03:38")
+        XCTAssertEqual(level.timeLeft(at: 38), "03:00")
+        XCTAssertEqual(level.timeLeft(at: 158), "01:00")
+        XCTAssertEqual(level.timeLeft(at: 215), "00:03")
+        XCTAssertEqual(level.timeLeft(at: 218), "00:00")
 
-        XCTAssertFalse(level.timeRemaining(at: 0).runningOut)
-        XCTAssertFalse(level.timeRemaining(at: 38).runningOut)
-        XCTAssertFalse(level.timeRemaining(at: 158).runningOut)
-        XCTAssertTrue(level.timeRemaining(at: 215).runningOut)
-        XCTAssertTrue(level.timeRemaining(at: 218).runningOut)
+        XCTAssertFalse(level.isTimeRunningOut(at: 0))
+        XCTAssertFalse(level.isTimeRunningOut(at: 38))
+        XCTAssertFalse(level.isTimeRunningOut(at: 158))
+        XCTAssertTrue(level.isTimeRunningOut(at: 215))
+        XCTAssertTrue(level.isTimeRunningOut(at: 218))
     }
 }
