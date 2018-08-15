@@ -142,6 +142,8 @@ if __name__ == '__main__':
         sys.maxsize)
     tps = parse_int_input_with_bounds(
         'Enter the tps for the level (int in [0, 60])', 0, 60)
+    final_tick = parse_int_input('Enter the final tick for the level (int > 0)',
+        1, sys.maxsize)
     safety_buffer = parse_float_input_with_bounds(
         'Enter the safety buffer for the level (float in [0, 1])', 0, 1)
 
@@ -161,7 +163,8 @@ if __name__ == '__main__':
     with open('Colorspin/Levels/' + filename, 'w') as outfile:
         json.dump(
             {
-                'tps': tps, 
+                'tps': tps,
+                'lastTick': final_tick,
                 'safetyBuffer': safety_buffer, 
                 'wheel': wheel, 
                 'particles': particles, 

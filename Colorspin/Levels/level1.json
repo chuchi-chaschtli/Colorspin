@@ -2,8 +2,8 @@
     "wheel": {
         "slices": "green:1,red:1,yellow:1,blue:1",
         "centerX": 375,
-        "centerY": -1200,
-        "radius": 100
+        "centerY": -1334,
+        "radius": 110
     },
     "particles": [
         {
@@ -62,5 +62,6 @@
         "coins": 10
     },
     "safetyBuffer": 0.2,
-    "tps": 1
+    "tps": 1,
+    "finalTick": 200
 }

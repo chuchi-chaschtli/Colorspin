@@ -38,6 +38,11 @@
 		356DB648210F4526005B3C53 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356DB647210F4526005B3C53 /* UserDefaultsExtension.swift */; };
 		356DB64B210F5C87005B3C53 /* LevelCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356DB64A210F5C87005B3C53 /* LevelCache.swift */; };
 		356DB64D210F5FFF005B3C53 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356DB64C210F5FFF005B3C53 /* DictionaryExtension.swift */; };
+		3597B56D211E529200FECE2A /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597B56B211E529200FECE2A /* MainMenuViewController.swift */; };
+		3597B56E211E529200FECE2A /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3597B56C211E529200FECE2A /* MainMenuViewController.xib */; };
+		3597B578211E587F00FECE2A /* MainMenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597B577211E587F00FECE2A /* MainMenuViewControllerTests.swift */; };
+		3597B57B2121108C00FECE2A /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597B57A2121108C00FECE2A /* GameProtocol.swift */; };
+		3597B57D212110BB00FECE2A /* Beautify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3597B57C212110BB00FECE2A /* Beautify.swift */; };
 		35ABF6EC210F99060055EC81 /* DictionaryExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF6EB210F99060055EC81 /* DictionaryExtensionTests.swift */; };
 		35ABF6EE210F9A330055EC81 /* UserDefaultsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF6ED210F9A330055EC81 /* UserDefaultsExtensionTests.swift */; };
 		35ABF6F2210F9BB40055EC81 /* LevelCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF6F1210F9BB40055EC81 /* LevelCacheTests.swift */; };
@@ -48,9 +53,7 @@
 		35ABF703211359560055EC81 /* CostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ABF702211359560055EC81 /* CostTests.swift */; };
 		35EC08AD20FAA5D60096CCC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC08AC20FAA5D60096CCC8 /* AppDelegate.swift */; };
 		35EC08B320FAA5D60096CCC8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC08B220FAA5D60096CCC8 /* GameScene.swift */; };
-		35EC08B820FAA5D70096CCC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35EC08B620FAA5D70096CCC8 /* Main.storyboard */; };
 		35EC08BA20FAA5D80096CCC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35EC08B920FAA5D80096CCC8 /* Assets.xcassets */; };
-		35EC08BD20FAA5D80096CCC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35EC08BB20FAA5D80096CCC8 /* LaunchScreen.storyboard */; };
 		35EC08E820FBE0350096CCC8 /* Wheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC08E720FBE0350096CCC8 /* Wheel.swift */; };
 		35EC08F020FBE8180096CCC8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 35EC08EF20FBE8180096CCC8 /* GameScene.sks */; };
 		48D7992036CA482F142298A3 /* Pods_colorspinViewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1BAA930D02FB668021E0F7 /* Pods_colorspinViewsTests.framework */; };
@@ -110,6 +113,11 @@
 		356DB647210F4526005B3C53 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		356DB64A210F5C87005B3C53 /* LevelCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCache.swift; sourceTree = "<group>"; };
 		356DB64C210F5FFF005B3C53 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		3597B56B211E529200FECE2A /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		3597B56C211E529200FECE2A /* MainMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuViewController.xib; sourceTree = "<group>"; };
+		3597B577211E587F00FECE2A /* MainMenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewControllerTests.swift; sourceTree = "<group>"; };
+		3597B57A2121108C00FECE2A /* GameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		3597B57C212110BB00FECE2A /* Beautify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beautify.swift; sourceTree = "<group>"; };
 		35ABF6EB210F99060055EC81 /* DictionaryExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionTests.swift; sourceTree = "<group>"; };
 		35ABF6ED210F9A330055EC81 /* UserDefaultsExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensionTests.swift; sourceTree = "<group>"; };
 		35ABF6F1210F9BB40055EC81 /* LevelCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCacheTests.swift; sourceTree = "<group>"; };
@@ -121,9 +129,7 @@
 		35EC08A920FAA5D60096CCC8 /* Colorspin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colorspin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35EC08AC20FAA5D60096CCC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35EC08B220FAA5D60096CCC8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		35EC08B720FAA5D70096CCC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35EC08B920FAA5D80096CCC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		35EC08BC20FAA5D80096CCC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35EC08BE20FAA5D80096CCC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35EC08E720FBE0350096CCC8 /* Wheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wheel.swift; sourceTree = "<group>"; };
 		35EC08EF20FBE8180096CCC8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -249,8 +255,8 @@
 		35182CF1210CA6F0009202A0 /* colorspinViewsTests */ = {
 			isa = PBXGroup;
 			children = (
-				35182CFA210CC80C009202A0 /* GameSceneTests.swift */,
-				35ABF6FE21133CF90055EC81 /* GameSceneViewControllerTests.swift */,
+				3597B576211E586C00FECE2A /* MainMenu */,
+				3597B575211E585A00FECE2A /* GameScene */,
 			);
 			path = colorspinViewsTests;
 			sourceTree = "<group>";
@@ -272,6 +278,41 @@
 				35182CC72104C5B0009202A0 /* FileReader.swift */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		3597B568211E518C00FECE2A /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				3597B56B211E529200FECE2A /* MainMenuViewController.swift */,
+				3597B56C211E529200FECE2A /* MainMenuViewController.xib */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		3597B575211E585A00FECE2A /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				35182CFA210CC80C009202A0 /* GameSceneTests.swift */,
+				35ABF6FE21133CF90055EC81 /* GameSceneViewControllerTests.swift */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
+		3597B576211E586C00FECE2A /* MainMenu */ = {
+			isa = PBXGroup;
+			children = (
+				3597B577211E587F00FECE2A /* MainMenuViewControllerTests.swift */,
+			);
+			path = MainMenu;
+			sourceTree = "<group>";
+		};
+		3597B5792121106900FECE2A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				3597B57A2121108C00FECE2A /* GameProtocol.swift */,
+				3597B57C212110BB00FECE2A /* Beautify.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		35ABF6EF210F9B820055EC81 /* ExtensionTests */ = {
@@ -331,9 +372,7 @@
 				35EC08B920FAA5D80096CCC8 /* Assets.xcassets */,
 				35182D00210CCEB4009202A0 /* Fixtures */,
 				35EC08BE20FAA5D80096CCC8 /* Info.plist */,
-				35EC08BB20FAA5D80096CCC8 /* LaunchScreen.storyboard */,
 				35182CC92104C6F6009202A0 /* Levels */,
-				35EC08B620FAA5D70096CCC8 /* Main.storyboard */,
 				35EC08E220FBC0810096CCC8 /* Models */,
 				35182CB12103C373009202A0 /* Utilities */,
 				35EC08E020FBC0220096CCC8 /* Views */,
@@ -345,6 +384,8 @@
 			isa = PBXGroup;
 			children = (
 				35EC08E120FBC0570096CCC8 /* GameScene */,
+				3597B568211E518C00FECE2A /* MainMenu */,
+				3597B5792121106900FECE2A /* Protocol */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -564,11 +605,10 @@
 			files = (
 				35EC08F020FBE8180096CCC8 /* GameScene.sks in Resources */,
 				35ABF6F4210FF8CE0055EC81 /* wheel.json in Resources */,
-				35EC08B820FAA5D70096CCC8 /* Main.storyboard in Resources */,
 				35EC08BA20FAA5D80096CCC8 /* Assets.xcassets in Resources */,
 				35182CCB2104C70E009202A0 /* level1.json in Resources */,
+				3597B56E211E529200FECE2A /* MainMenuViewController.xib in Resources */,
 				35182D07210CD280009202A0 /* level.json in Resources */,
-				35EC08BD20FAA5D80096CCC8 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +771,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3597B578211E587F00FECE2A /* MainMenuViewControllerTests.swift in Sources */,
 				35ABF6FF21133CF90055EC81 /* GameSceneViewControllerTests.swift in Sources */,
 				35182CFB210CC80C009202A0 /* GameSceneTests.swift in Sources */,
 				35182CFF210CCDAB009202A0 /* TestHelper.swift in Sources */,
@@ -742,12 +783,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				35ABF701211352620055EC81 /* Cost.swift in Sources */,
+				3597B57B2121108C00FECE2A /* GameProtocol.swift in Sources */,
 				35EC08B320FAA5D60096CCC8 /* GameScene.swift in Sources */,
 				35182CCD2104E286009202A0 /* Level.swift in Sources */,
 				35182CC32103F517009202A0 /* JSONProtocol.swift in Sources */,
 				356DB640210E3E63005B3C53 /* Star.swift in Sources */,
 				35182CC52103F723009202A0 /* ColorExtension.swift in Sources */,
 				35182CAE20FC1630009202A0 /* Particle.swift in Sources */,
+				3597B57D212110BB00FECE2A /* Beautify.swift in Sources */,
 				35EC08AD20FAA5D60096CCC8 /* AppDelegate.swift in Sources */,
 				356DB64B210F5C87005B3C53 /* LevelCache.swift in Sources */,
 				35182CC82104C5B0009202A0 /* FileReader.swift in Sources */,
@@ -758,6 +801,7 @@
 				35182D09210CF9C9009202A0 /* Build.swift in Sources */,
 				35EC08E820FBE0350096CCC8 /* Wheel.swift in Sources */,
 				35182CB42103C390009202A0 /* ArrayExtension.swift in Sources */,
+				3597B56D211E529200FECE2A /* MainMenuViewController.swift in Sources */,
 				35182CBC2103D808009202A0 /* GameSceneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -795,25 +839,6 @@
 			targetProxy = 35EC09AB20FC05320096CCC8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		35EC08B620FAA5D70096CCC8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				35EC08B720FAA5D70096CCC8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		35EC08BB20FAA5D80096CCC8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				35EC08BC20FAA5D80096CCC8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		35182CE1210954F6009202A0 /* Debug */ = {
@@ -1024,6 +1049,7 @@
 			baseConfigurationReference = B69F5684922AF30BCF60BC5D /* Pods-Colorspin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 665A9F464Z;
 				INFOPLIST_FILE = Colorspin/Info.plist;
@@ -1043,6 +1069,7 @@
 			baseConfigurationReference = BAF64ED8EF9AF1DA3668E724 /* Pods-Colorspin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 665A9F464Z;
 				INFOPLIST_FILE = Colorspin/Info.plist;

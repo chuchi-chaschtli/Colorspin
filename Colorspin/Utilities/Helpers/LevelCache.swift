@@ -51,15 +51,15 @@ struct LevelCache {
             return false
         }
 
-        if !UserDefaults.unlockedLevels.contains(level) {
-            let canUnlock = cost <= totalStarsEarned
-
-            if canUnlock {
-                UserDefaults.set(unlockedLevels: UserDefaults.unlockedLevels + [level])
-            }
-            return canUnlock
+        guard !UserDefaults.unlockedLevels.contains(level) else {
+            return true
         }
-        return true
+
+        if cost <= totalStarsEarned {
+            UserDefaults.set(unlockedLevels: UserDefaults.unlockedLevels + [level])
+            return true
+        }
+        return false
     }
 }
 
