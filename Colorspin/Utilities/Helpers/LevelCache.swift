@@ -27,7 +27,11 @@ struct LevelCache {
         let levelString = "\(levelNumber)"
         UserDefaults.set(newLevels: [levelString: starsEarned])
 
-        _ = unlockWithStars(level: highestLevel + 1, cost: (try? getLevel(from: Build.isRunningUnitTests ? -1 : highestLevel + 1))?.cost.stars)
+        var levelId = highestLevel + 1
+        if Build.isRunningUnitTests {
+            levelId = -1
+        }
+        _ = unlockWithStars(level: highestLevel + 1, cost: (try? getLevel(from: levelId))?.cost.stars)
     }
 
     static func add(coins: Int) {
@@ -53,8 +57,9 @@ struct LevelCache {
 
         if cost <= totalStarsEarned {
             UserDefaults.set(unlockedLevels: UserDefaults.unlockedLevels + [level])
+            return true
         }
-        return cost <= totalStarsEarned
+        return false
     }
 }
 
