@@ -17,7 +17,7 @@ class GameSceneTests: XCTestCase {
         super.setUp()
 
         UserDefaults.set(currentLevel: 1)
-        sut = SKScene(fileNamed: "GameScene") as! GameScene
+        sut = (SKScene(fileNamed: "GameScene") as! GameScene)
         sut.set(level: try! Level(data: levelData))
     }
 
